@@ -1,6 +1,6 @@
-const Links = () => {
+const Links = (props) => {
     return (
-        <ul>
+        <ul className={props.class}>
             <li>
                 <a 
                 href="/#home-section"

@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Links } from "./Links"
+import Links from "./Links"
 
 const Footer = () => {
    return (
     <footer>
-      <img src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"></img>
+      <img 
+      src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
+      ></img>
       <div>
          <h4>Doormat Navigation</h4>
          <Links/>
