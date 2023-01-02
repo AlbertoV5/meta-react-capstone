@@ -14,11 +14,12 @@ code {
 
 nav {
   display: flex;
+  height: 80px;
   background-color: silver;
 }
 
 nav img {
-  width: 100px;
+  width: 90px;
 }
 
 #hero-section {
