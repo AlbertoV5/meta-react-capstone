@@ -11,11 +11,11 @@ const Links = (props) => {
                 </Link>
             </li>
             <li>
-                <Link
-                to="#about-section"
+                <a
+                href="#about-section"
                 >
                     About
-                </Link>
+                </a>
             </li>
             <li>
                 <Link
