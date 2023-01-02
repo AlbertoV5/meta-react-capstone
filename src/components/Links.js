@@ -1,47 +1,49 @@
+import {Link} from "react-router-dom";
+
 const Links = (props) => {
     return (
         <ul className={props.class}>
             <li>
-                <a 
-                href="/#home-section"
+                <Link
+                to="/"
                 >
                     Home
-                </a>
+                </Link>
             </li>
             <li>
-                <a 
-                href="/#about-section"
+                <Link
+                to="#about-section"
                 >
                     About
-                </a>
+                </Link>
             </li>
             <li>
-                <a 
-                href="/#menu-section"
+                <Link
+                to="/menu"
                 >
                     Menu
-                </a>
+                </Link>
             </li>
             <li>
-                <a 
-                href="/#reservations-section"
+                <Link
+                to="/reservations"
                 >
                     Reservations
-                </a>
+                </Link>
             </li>
             <li>
-                <a 
-                href="/#order-online-section"
+                <Link 
+                to="/order-online"
                 >
                     Order Online
-                </a>
+                </Link>
             </li>
             <li>
-                <a 
-                href="/#login-section"
+                <Link
+                to="/login"
                 >
                     Login
-                </a>
+                </Link>
             </li>
         </ul>
     )
