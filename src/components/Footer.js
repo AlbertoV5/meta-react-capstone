@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Links from "./Links"
 
 const Footer = () => {

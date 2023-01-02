@@ -14,6 +14,29 @@ code {
 
 nav {
   display: flex;
+  background-color: silver;
+}
+
+nav img {
+  width: 100px;
+}
+
+#hero-section {
+  background-color: gray;
+  display: flex;
+}
+
+#highlights-section {
+  background-color: silver;
+}
+
+#testimonials-section {
+  background-color: black;
+  color: white;
+}
+
+#about-section {
+  background-color: white;
 }
 
 footer {

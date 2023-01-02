@@ -1,8 +1,16 @@
-import { useState } from "react";
+import About from "./section/About"
+import Hero from "./section/Hero"
+import Highlights from "./section/Highlights"
+import Testimonials from "./section/Testimonials"
 
-const Main = ({children}) => {
+const Main = () => {
     return (
-        <main>{children}</main>
+        <main>
+            <Hero></Hero>
+            <Highlights></Highlights>
+            <Testimonials></Testimonials>
+            <About></About>
+        </main>
     )
 }
 export default Main;
