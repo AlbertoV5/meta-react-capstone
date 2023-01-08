@@ -2,51 +2,50 @@ import ButtonOnlineMenu from "../buttons/ButtonOnlineMenu";
 
 import CardSpecial from "../cards/CardSpecial";
 
-import { HStack } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, Button } from "@chakra-ui/react";
+
+import SectionBase from "./SectionBase"
+
 
 const Highlights = () => {
     return (
-        <section 
-        id="highlights-section"
+        <SectionBase 
+            id="highlights-section"
+            backgroundColor={"gray.100"}
         >
-            <div
-            id="highlights-wrapper"
-            className="container-sm"
-            style={{width:"80vw"}}
+            <VStack
+                id="highlights-wrapper"
+                spacing={"4"}
+                align={"stretch"}
+                width={{
+                    base:"100%",
+                    md:"100%"
+                }}
             >
-                <section 
-                id="highlights-row-1"
-                className="row p-4"
+                <HStack
+                    align={"stretch"}
                 >
-                    <HStack>
-                        <header 
-                        id="highlights-header"
-                        className="col-12 col-lg-6 p-2"
-                        >
-                            <h2>Specials</h2>
-                        </header>
-                        <div
-                        id="highlights-button"
-                        className="col-12 col-lg-6 p-2"
-                        >
-                            <ButtonOnlineMenu/>
-                        </div>
-                    </HStack>
-                    <HStack>
-                        <CardSpecial
-                            header={"Greek Salad"}
-                            body={"Try our greek salad."}
-                            footer={"Order a delivery"}
-                        >
-                        </CardSpecial>
-                        <CardSpecial>
-                        </CardSpecial>
-                        <CardSpecial>
-                        </CardSpecial>
-                    </HStack>
-                </section>
-            </div>
-        </section>
+                    <Heading size={"lg"} width={"80%"}>
+                       Specials
+                    </Heading>
+                    <Button width={"20%"} colorScheme={"yellow"} color={"black"} size="md">
+                        Online Menu
+                    </Button>
+                </HStack>
+                <HStack>
+                    <CardSpecial
+                        header={"Greek Salad"}
+                        body={"Try our greek salad."}
+                        footer={"Order a delivery"}
+                    >
+                    </CardSpecial>
+                    <CardSpecial>
+                    </CardSpecial>
+                    <CardSpecial>
+                    </CardSpecial>
+                </HStack>
+            </VStack>
+        </SectionBase>
     )
 }
 export default Highlights;

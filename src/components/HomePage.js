@@ -7,7 +7,7 @@ import { VStack } from "@chakra-ui/react"
 
 const HomePage = () => {
     return (
-        <VStack width={"100vw"} justify={"center"}>
+        <VStack spacing={"0"}>
             <Hero></Hero>
             <Highlights></Highlights>
             <Testimonials></Testimonials>

@@ -10,6 +10,8 @@ const Nav = () => {
             maxW={"100vw"}
             backgroundColor={"Background"}
             position={"fixed"}
+            height={"4.5em"}
+            zIndex={100}
         >
             <MenuLinks/>
         </Container>

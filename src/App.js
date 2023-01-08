@@ -13,7 +13,7 @@ function App() {
     <ChakraProvider>
       <BrowserRouter>
         <Nav/>
-        <div style={{height:"8em"}}></div>
+        <div style={{height:"4.5em"}}></div>
         <Routes>
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="/booking" element={<BookingPage/>}></Route>
