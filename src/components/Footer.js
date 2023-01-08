@@ -1,4 +1,4 @@
-import Links from "./Links"
+import MenuLinks from "./MenuLinks"
 
 const Footer = () => {
    return (
@@ -8,7 +8,7 @@ const Footer = () => {
       ></img>
       <div>
          <h4>Doormat Navigation</h4>
-         <Links/>
+         <MenuLinks/>
       </div>
       <div>
          <h4>Social Media Links</h4>

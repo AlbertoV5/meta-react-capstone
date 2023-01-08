@@ -1,9 +1,10 @@
+import { Button } from "@chakra-ui/react";
 
 const ButtonCallToAction = () => {
     return (
-        <button
+        <Button
         className="btn btn-primary"
-        >Press Me!</button>
+        >Press Me!</Button>
     )
 }
 export default ButtonCallToAction;
