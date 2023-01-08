@@ -1,16 +1,29 @@
 import React from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Image, Heading, Text } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Image, Heading, Text, HStack, Spacer } from '@chakra-ui/react'
 
-const CardSpecial = ({image, header, body, footer}) => {
+const CardSpecial = ({image, header, price, body, footer}) => {
   return (
-    <Card>
-      <Image src={image}></Image>
+    <Card backgroundColor={"Background"} width={{
+      base:"100%",
+      md:"16em"
+    }}>
+      <Image 
+        src={image}
+        borderRadius={"8"}
+        borderBottomRadius={"0"}
+      ></Image>
       <CardBody>
-        <Heading size={"md"}>{header}</Heading>
+        <HStack paddingBottom={"1em"}>
+          <Heading size={"sm"}>{header}</Heading>
+          <Spacer></Spacer>
+          <Text size={"md"} color={"orange.500"} >{price}</Text>
+        </HStack>
         <Text size={"md"}>{body}</Text>
       </CardBody>
       <CardFooter>
-        {footer}
+        <Text as="b">
+          {footer}
+        </Text>
       </CardFooter>
     </Card>
   )
