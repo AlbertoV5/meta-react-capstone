@@ -1,4 +1,4 @@
-import MenuLinks from "./MenuLinks"
+import MenuLinks from "./links/MenuLinks"
 
 const Footer = () => {
    return (

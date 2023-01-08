@@ -1,5 +1,3 @@
-import ButtonOnlineMenu from "../buttons/ButtonOnlineMenu";
-
 import CardSpecial from "../cards/CardSpecial";
 
 import { HStack, VStack, Heading, Text, Button, Wrap } from "@chakra-ui/react";
@@ -24,8 +22,9 @@ const Highlights = () => {
             >
                 <HStack
                     align={"stretch"}
+                    paddingBottom={"2em"}
                 >
-                    <Heading size={"lg"} width={"80%"}>
+                    <Heading size={"xl"} width={"80%"}>
                        Specials
                     </Heading>
                     <Button colorScheme={"yellow"} color={"black"} size="md">

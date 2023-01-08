@@ -6,7 +6,7 @@ const Hero = () => {
     return (
     <SectionBase 
         id="hero-section"
-        backgroundColor={"gray.400"}
+        backgroundColor={"gray.300"}
     >
         <VStack
             id="hero-header"

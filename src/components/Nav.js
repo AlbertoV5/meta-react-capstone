@@ -1,6 +1,6 @@
-import MenuLinks from "./MenuLinks"
+import MenuLinks from "./links/MenuLinks"
 
-import { Container, HStack, Image } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 
 
 const Nav = () => {
