@@ -1,12 +1,19 @@
 import React from 'react'
 
-import { HStack } from '@chakra-ui/react'
+import { HStack, Wrap } from '@chakra-ui/react'
 
 const FormRow = ({width, children}) => {
   return (
-    <HStack width={width?width:'100%'} spacing={"4"} align={"start"} height={"100px"}>
+    <Wrap width={
+        width ? width : '100%'
+      } 
+      spacing={"2"}
+      px={"1"}
+      align={"start"}
+      paddingBottom={"2"}
+    >
         {children}
-    </HStack>
+    </Wrap>
   )
 }
 

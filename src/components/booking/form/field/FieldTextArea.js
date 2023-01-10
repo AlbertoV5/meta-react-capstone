@@ -18,7 +18,7 @@ const FieldTextArea = ({name, label, placeholder, helper, children}) => {
                 <Textarea 
                   {...field} 
                   placeholder={placeholder?placeholder:label}
-                  height={"100px"}
+                  height={{base:"200px", md:"100px"}}
                   textAlign={"start"}
                   justify={"left"}
                   zIndex={0}

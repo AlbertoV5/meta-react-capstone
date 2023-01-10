@@ -1,4 +1,4 @@
-import { InputLeftElement, } from '@chakra-ui/react'
+import { InputLeftElement, Spacer, useBreakpointValue } from '@chakra-ui/react'
 
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons'
 import { Formik, Form } from 'formik'
@@ -14,6 +14,7 @@ import FieldInputGroup from './field/FieldInputGroup'
 
 
 const CustomerForm = ({handleTabChange}) => {
+    const isDesktop = useBreakpointValue({ base: false, md: true });
     const [booking, setBooking] = useBookingContext();
 
     return (
@@ -35,21 +36,23 @@ const CustomerForm = ({handleTabChange}) => {
         <FormCol>
             <FormRow>
                 <FieldInput type={"text"} name={"firstName"} label={"First Name"}/>
+                <Spacer></Spacer>
                 <FieldInput type={"text"} name={"lastName"} label={"Last Name"}/>
-            </FormRow>
-            <FormRow>
+                {isDesktop?null:<Spacer></Spacer>}
                 <FieldInputGroup type={"tel"} name={"phoneNumber"} label={"Phone Number"}>
                     <InputLeftElement
                         pointerEvents='none'
                         children={<PhoneIcon color='gray.300' />}
                     />
                 </FieldInputGroup>
+                <Spacer></Spacer>
                 <FieldInputGroup type={"email"} name={"email"} label={"Email Address"}>
                     <InputLeftElement
                         pointerEvents='none'
                         children={<EmailIcon color='gray.300' />}
                     />
                 </FieldInputGroup>
+                {isDesktop?null:<Spacer></Spacer>}
             </FormRow>
         </FormCol>
         <SubmitButtom>

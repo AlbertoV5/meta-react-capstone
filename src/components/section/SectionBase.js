@@ -7,13 +7,13 @@ const SectionBase = ({children, id, backgroundColor}) => {
       as="section" 
       id={id}
       width={"100vw"}
-      px={"15vw"}
+      px={{base:"10vw", md:"15vw"}}
       backgroundColor={backgroundColor?backgroundColor:"Background"}
     >
       <Wrap
         spacing={"5"}
         width={{
-            base:"70vw",
+            base:"80vw",
             md:"70vw"
         }}
         align={"center"}

@@ -35,12 +35,12 @@ const ConfirmForm = () => {
                             base:"100%",
                             md: "40%"
                         }}>
-                        <Box fontWeight={600} width={"50%"}>
+                        <Box fontWeight={600} width={"30%"}>
                             {["Date", "Time", "Guests", "Ocassion"].map((item) =>
                                 <Text key={item}>{item}</Text>
                             )}
                         </Box>
-                        <Box width={"50%"}>
+                        <Box width={"60%"}>
                             {Object.entries(booking.table).map(([key, value]) =>
                                 <Text key={key} textAlign={"right"} overflow={"scroll"}>{value}</Text>
                             )}
@@ -49,28 +49,37 @@ const ConfirmForm = () => {
                     <Spacer></Spacer>
                     <FormRow width={{
                         base:"100%",
-                        md: "50%"
+                        md: "48%"
                     }}>
-                        <Box fontWeight={600} width={"50%"}>
+                        <Box fontWeight={600} width={"30%"}>
                             {["First Name", "Last Name", "Phone", "Email"].map((item) =>
                                 <Text key={item}>{item}</Text>
                             )}
                         </Box>
-                        <Box width={"50%"}>
+                        <Box width={"60%"}>
                             {Object.entries(booking.customer).map(([key, value]) =>
                                 <Text key={key} textAlign={"right"}>{value}</Text>
                             )}
                         </Box>
                     </FormRow>
-                </Wrap>
-                <FormRow>
-                    <Box fontWeight={600} width={"50%"}>
+                    <FormRow width={{
+                        base:"100%",
+                        md: "48%"
+                    }}>
+                    <Box fontWeight={600} width={{
+                        base:"100%",
+                        md: "40%"
+                    }}>
                         <Text>Comments</Text>
                     </Box>
-                    <Box width={"50%"}>
-                        <Text textAlign={"right"}>{booking.details.comments}</Text>
+                    <Box width={{
+                        base:"100%",
+                        md: "50%"
+                    }}>
+                        <Text textAlign={"left"}>{booking.details.comments}</Text>
                     </Box>
-                </FormRow>
+                    </FormRow>
+                </Wrap>
             </FormCol>
             <SubmitButtom>
                 Submit

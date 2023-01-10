@@ -1,5 +1,4 @@
 import {
-    FormControl,
     FormLabel,
     FormErrorMessage,
     FormHelperText,
@@ -8,18 +7,19 @@ import {
 
 import React from 'react'
 import { Field } from 'formik'
+import FormWrapper from './FormWrapper'
 
 const FieldSelect = ({name, label, placeholder, children}) => {
   return (
     <Field name={name}>
         {({field, form}) => (
-            <FormControl isInvalid={form.errors[name] && form.touched[name]}>
+        <FormWrapper form={form} name={name}>
             <FormLabel>{label}</FormLabel>
             <Select {...field} placeholder={placeholder}>
                 {children}
             </Select>
-            <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
-        </FormControl>
+            <FormErrorMessage display={"block"} textAlign={"right"}>{form.errors[name]}</FormErrorMessage>
+        </FormWrapper>
         )}
     </Field>
   )

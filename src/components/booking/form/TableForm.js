@@ -9,9 +9,13 @@ import FieldSelect from "./field/FieldSelect"
 
 import FormRow from "./layout/FormRow"
 import FormCol from './layout/FormCol'
+import { Spacer, useBreakpointValue } from '@chakra-ui/react'
 
 
 const TableForm = ({handleTabChange}) => {
+
+    const isDesktop = useBreakpointValue({ base: false, md: true });
+
     const [booking, setBooking] = useBookingContext();
     
     return (
@@ -33,15 +37,17 @@ const TableForm = ({handleTabChange}) => {
             <FormCol>
                 <FormRow>
                     <FieldInput type={"date"} name={"date"} label={"Date"}/>
+                    <Spacer></Spacer>
                     <FieldInput type={"time"} name={"time"} label={"Time"}/>
-                </FormRow>
-                <FormRow>
+                    {isDesktop?null:<Spacer></Spacer>}
                     <FieldNumber name={"guests"} min={0} max={12} label={"Number of Guests"}/>
+                    <Spacer></Spacer>
                     <FieldSelect name={"ocassion"} label={"Ocassion"} placeholder={"Select"}>
                         <option value='Birthday'>Birthday</option>
                         <option value='Anniversary'>Anniversary</option>
                         <option value='Other'>Other</option>
                     </FieldSelect>
+                    {isDesktop?null:<Spacer></Spacer>}
                 </FormRow>
             </FormCol>
             <SubmitButtom>

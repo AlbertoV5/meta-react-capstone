@@ -13,13 +13,14 @@ import {
 
 import React from 'react'
 import { Field } from 'formik'
+import FormWrapper from './FormWrapper'
 
 const FieldNumber = ({name, label, min, max, children}) => {
     // https://stackoverflow.com/questions/67187550/formik-chakra-ui-input-number-dont-work
     return (
         <Field name={name}>
             {({field, form}) => (
-                <FormControl isInvalid={form.errors[name] && form.touched[name]}>
+                <FormWrapper form={form} name={name}>
                     <FormLabel htmlFor={name}>{label}</FormLabel>
                         <NumberInput 
                             min={min}
@@ -36,8 +37,8 @@ const FieldNumber = ({name, label, min, max, children}) => {
                                 <NumberDecrementStepper />
                             </NumberInputStepper>
                         </NumberInput>
-                    <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
-                </FormControl>
+                    <FormErrorMessage display={"block"} textAlign={"right"}>{form.errors[name]}</FormErrorMessage>
+                </FormWrapper>
             )}
         </Field>
     )
