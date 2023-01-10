@@ -1,8 +1,12 @@
 import BookingSection from "./booking/BookingSection";
 
+import { BookingProvider } from "./booking/BookingContext";
+
 const BookingPage = () => {
     return (
-        <BookingSection></BookingSection>
+        <BookingProvider>
+            <BookingSection/>
+        </BookingProvider>
     )
 }
 export default BookingPage;

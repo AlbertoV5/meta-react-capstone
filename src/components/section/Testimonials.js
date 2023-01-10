@@ -8,7 +8,7 @@ const Testimonials = () => {
     return (
     <SectionBase 
         id="testimonials-section"
-        backgroundColor={"gray.800"}
+        backgroundColor={"gray.600"}
     >
         <VStack
             id="testimonials-wrapper"

@@ -16,7 +16,7 @@ function App() {
         <div style={{height:"4.5em"}}></div>
         <Routes>
             <Route path="/" element={<HomePage/>}></Route>
-            <Route path="/reservations" element={<BookingPage/>}></Route>
+            <Route path="/booking" element={<BookingPage/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -31,10 +31,10 @@ const MenuLinks = (props) => {
                 </Button>
             </Link>
             <Link
-            to="/reservations"
+            to="/booking"
             >
                 <Button variant={"ghost"} >
-                    Reservations
+                    Booking
                 </Button>
             </Link>
             <Link 

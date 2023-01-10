@@ -19,13 +19,13 @@ const Hero = () => {
             py={"10"}
         >
             <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
-            <Heading textAlign={"left"} size="sm">Chicago</Heading>
+            <Heading textAlign={"left"} size="md">Chicago</Heading>
             <Text textAlign={"left"}
             >Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </Text>
             <Spacer py={"0.5em"}></Spacer>
-            <Button width={"50%"} colorScheme={"yellow"} color={"black"} size="md">
+            <Button width={"200px"} colorScheme={"yellow"} color={"black"} size="md">
                 Reserve a Table
             </Button>
         </VStack>
