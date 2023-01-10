@@ -17,6 +17,7 @@ const About = () => {
                 base:"100%",
                 md:"100%"
             }}
+            py={"8"}
         >
             <Box 
                 textAlign={"left"} 

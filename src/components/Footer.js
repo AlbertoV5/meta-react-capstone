@@ -38,12 +38,12 @@ const Footer = () => {
             <Heading size="sm">Doormat Navigation</Heading>
             <br></br>
             <VStack align={"left"}>
-               <Link>Home</Link>
-               <Link>About</Link>
-               <Link>Menu</Link>
-               <Link>Reservations</Link>
-               <Link>Order Online</Link>
-               <Link>Login</Link>
+               <Link to="/">Home</Link>
+               <a href="#about-section">About</a>
+               <Link to="/menu">Menu</Link>
+               <Link to="/reservations">Reservations</Link>
+               <Link to="/order-online">Order Online</Link>
+               <Link to="/login">Login</Link>
             </VStack>       
          </Box>
          <Spacer></Spacer>
