@@ -44,11 +44,7 @@ const BookingSection = () => {
                     <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
                     <Heading textAlign={"left"} size="md">Chicago</Heading>
                     <Text fontSize={"lg"}>Find a table for any ocassion.</Text>
-                    <Progress value={formProgress} colorScheme={"gray"} size="sm"/>
-                    {/* <HStack>
-                        <Image></Image>
-                        <Image></Image>
-                    </HStack> */}
+                    <Progress value={formProgress} colorScheme={"purple"} size="sm"/>
                     <Tabs 
                         index={tabIndex}
                         onChange={handleTabChange}
@@ -65,13 +61,6 @@ const BookingSection = () => {
                             </TabPanel>
                             <TabPanel>
                                 <CustomerForm handleTabChange={handleTabChange}></CustomerForm>
-                                <Box width={"100%"} align={"center"} paddingTop={"2em"}>
-                                    <Button 
-                                        colorScheme={"yellow"} 
-                                        width={"200px"}
-                                        disabled
-                                    >Continue<ArrowForwardIcon/></Button>
-                                </Box>
                             </TabPanel>
                             <TabPanel>
                                 <Text>Confirm</Text>

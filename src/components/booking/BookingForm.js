@@ -14,11 +14,12 @@ import {
     NumberInputStepper,
     HStack,
     VStack,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 
 import React from 'react'
 import { useBookingContext, schema } from './BookingContext'
 import { Formik, Field, Form } from 'formik'
+import SubmitButtom from './SubmitButtom'
 
 
 const BookingForm = ({handleTabChange}) => {
@@ -41,7 +42,7 @@ const BookingForm = ({handleTabChange}) => {
       >
     {(props) => (
     <Form>
-        <VStack spacing={"1"} align={"center"} py={"4"}>
+        <VStack spacing={"1"} align={"center"} py={"2"}>
             <HStack width={'100%'} spacing={"4"} align={"start"} height={"100px"}>
                 <Field name='date'>
                     {({field, form}) => (
@@ -101,13 +102,7 @@ const BookingForm = ({handleTabChange}) => {
                 </Field>
             </HStack>
         </VStack>
-        <Box width={"100%"} align={"center"} >
-            <Button 
-                colorScheme={"yellow"} 
-                width={"200px"}
-                type={"submit"}
-            >Continue</Button>
-        </Box>
+        <SubmitButtom/>
     </Form>
     )}
     </Formik>

@@ -25,8 +25,6 @@ export const bookingDefault = {
         lastName: "",
         phoneNumber: "",
         email: "",
-        password: "",
-        request: ""
     }
 }
 
@@ -36,6 +34,12 @@ export const schema = {
         time: Yup.string().required("Required"),
         guests: Yup.number().min(1, "Minimum 1").max(12, "Minimum 2").required("Required"),
         ocassion: Yup.string().required("Required"),
+    }),
+    customer: Yup.object().shape({
+        firstName: Yup.string().required("Required"),
+        lastName: Yup.string().required("Required"),
+        phoneNumber: Yup.string().required("Required"),
+        email: Yup.string().email("Invalid Email").required("Required")
     })
 };
 
