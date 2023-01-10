@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useBookingContext, schema } from '../BookingContext'
 import { Formik, Form } from 'formik'
 import SubmitButtom from './SubmitButtom'
@@ -12,11 +12,23 @@ import FormCol from './layout/FormCol'
 import { Spacer, useBreakpointValue } from '@chakra-ui/react'
 
 
+const availableTimes = (state, action) => {
+    if (action.date == 'Monday') return {avail: ["12:00", "14:00", "15:00", "17:00"]};
+}
+
 const TableForm = ({handleTabChange}) => {
 
     const isDesktop = useBreakpointValue({ base: false, md: true });
 
     const [booking, setBooking] = useBookingContext();
+    const [state, dispatch] = useReducer(availableTimes, {avail: []});
+    
+    // TODO:
+    // use state.avail to map all the options for available times form
+    // this means changing the current time input to a custom option
+    // the dispatch will carry the date 
+    // onChange={(value) => dispatch({date: value})}
+    // so that the reducer availableTimes function sets avail array based on the date
     
     return (
     <Formik
