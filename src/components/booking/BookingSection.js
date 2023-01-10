@@ -1,16 +1,16 @@
 import { 
     Heading, HStack, Text, VStack, Image, Spacer,
-    Tabs, TabList, TabPanels, Tab, TabPanel, Box, Button,
+    Tabs, TabList, TabPanels, Tab, TabPanel,
     Progress
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 import SectionBase from '../section/SectionBase'
-import BookingForm from "./form/BookingForm"
+import TableForm from "./form/TableForm"
 import CustomerForm from './form/CustomerForm'
 import DetailsForm from './form/DetailsForm'
+import ConfirmForm from './form/ConfirmForm'
 
-import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { useBookingContext } from './BookingContext'
 
 
@@ -20,7 +20,7 @@ const BookingSection = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     const handleTabChange = (i) => {
-        setFormProgress((p) => (i)*33)
+        setFormProgress((p) => (i)*34)
         setTabIndex(i)
     }
 
@@ -44,23 +44,24 @@ const BookingSection = () => {
                 >
                     <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
                     <Heading textAlign={"left"} size="md">Chicago</Heading>
-                    <Text fontSize={"lg"}>Find a table for any ocassion.</Text>
+                    <Text fontSize={"lg"} py={"0.5em"}>Find a table for any ocassion.</Text>
                     <Progress value={formProgress} colorScheme={"purple"} size="sm"/>
-                    <Tabs 
+                    <Tabs
                         index={tabIndex}
                         onChange={handleTabChange}
                         variant={"enclosed"}
                         colorScheme={"purple"}
+                        py={"0.5em"}
                     >
                         <TabList>
                             <Tab isDisabled={!booking.stage.table}>Table</Tab>
                             <Tab isDisabled={!booking.stage.customer}>Customer</Tab>
-                            <Tab isDisabled={!booking.stage.details}>Confirm</Tab>
-                            <Tab isDisabled={!booking.stage.confirm}>Done</Tab>
+                            <Tab isDisabled={!booking.stage.details}>Details</Tab>
+                            <Tab isDisabled={!booking.stage.confirm}>Confirm</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>
-                                <BookingForm handleTabChange={handleTabChange}></BookingForm>
+                                <TableForm handleTabChange={handleTabChange}></TableForm>
                             </TabPanel>
                             <TabPanel>
                                 <CustomerForm handleTabChange={handleTabChange}></CustomerForm>
@@ -69,7 +70,7 @@ const BookingSection = () => {
                                 <DetailsForm handleTabChange={handleTabChange}></DetailsForm>
                             </TabPanel>
                             <TabPanel>
-                                Done
+                                <ConfirmForm handleTabChange={handleTabChange}></ConfirmForm>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

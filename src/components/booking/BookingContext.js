@@ -49,6 +49,9 @@ export const schema = {
     })
 };
 
+export const completeSchema = Yup.object().shape(schema);
+
+
 export const BookingProvider = ({children}) => {
     const [booking, setBooking] = useState(bookingDefault);
     return (

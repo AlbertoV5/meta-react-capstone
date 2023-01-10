@@ -1,11 +1,9 @@
 import React from 'react'
 import { useBookingContext, schema } from '../BookingContext'
-import { Formik, Field, Form } from 'formik'
+import { Formik, Form } from 'formik'
 import SubmitButtom from './SubmitButtom'
 
-import FieldInput from './field/FieldInput'
-import FieldNumber from "./field/FieldNumber"
-import FieldSelect from "./field/FieldSelect"
+import FieldTextArea from "./field/FieldTextArea"
 
 import FormRow from "./layout/FormRow"
 import FormCol from './layout/FormCol'
@@ -16,10 +14,10 @@ const DetailsForm = ({handleTabChange}) => {
     
     return (
     <Formik
-        initialValues={booking.table}
-        validationSchema={schema.table}
+        initialValues={booking.details}
+        validationSchema={schema.details}
         onSubmit={(values, actions) => {
-          setBooking((prev) => ({
+            setBooking((prev) => ({
                     ...prev,
                     stage: {...prev.stage, confirm: true},
                     details: values
@@ -32,6 +30,12 @@ const DetailsForm = ({handleTabChange}) => {
         <Form>
             <FormCol>
                 <FormRow>
+                    <FieldTextArea
+                        name={"comments"} 
+                        label={"Comments"}
+                        placeholder={"Include any additional comments here."}
+                        helper={"Optional"}
+                    ></FieldTextArea>
                 </FormRow>
                 <FormRow>
                 </FormRow>

@@ -1,7 +1,7 @@
 import { InputLeftElement, } from '@chakra-ui/react'
 
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons'
-import { Formik, Field, Form } from 'formik'
+import { Formik, Form } from 'formik'
 
 import { useBookingContext, schema } from '../BookingContext'
 import SubmitButtom from './SubmitButtom'

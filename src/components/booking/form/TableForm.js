@@ -1,6 +1,6 @@
 import React from 'react'
 import { useBookingContext, schema } from '../BookingContext'
-import { Formik, Field, Form } from 'formik'
+import { Formik, Form } from 'formik'
 import SubmitButtom from './SubmitButtom'
 
 import FieldInput from './field/FieldInput'
@@ -11,7 +11,7 @@ import FormRow from "./layout/FormRow"
 import FormCol from './layout/FormCol'
 
 
-const BookingForm = ({handleTabChange}) => {
+const TableForm = ({handleTabChange}) => {
     const [booking, setBooking] = useBookingContext();
     
     return (
@@ -53,4 +53,4 @@ const BookingForm = ({handleTabChange}) => {
     )
 }
 
-export default BookingForm
+export default TableForm
