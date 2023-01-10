@@ -28,6 +28,7 @@ const Footer = () => {
                base:"40%",
                md:"20%"
             }}
+            height={"200px"}
             src={"https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=2000"}
             // src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
          ></Image>

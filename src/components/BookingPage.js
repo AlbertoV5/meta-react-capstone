@@ -1,9 +1,8 @@
+import BookTable from "./booking/BookTable";
 
 const BookingPage = () => {
     return (
-        <>
-        <div>BookingPage</div>
-        </>
+        <BookTable></BookTable>
     )
 }
 export default BookingPage;

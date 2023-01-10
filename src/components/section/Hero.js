@@ -16,6 +16,7 @@ const Hero = () => {
                 base:"100%",
                 md:"40%"
             }}
+            py={"10"}
         >
             <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
             <Heading textAlign={"left"} size="sm">Chicago</Heading>
