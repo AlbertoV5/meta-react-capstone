@@ -54,10 +54,10 @@ const BookingSection = () => {
                         py={"0.5em"}
                     >
                         <TabList>
-                            <Tab isDisabled={!booking.stage.table}>Book</Tab>
+                            <Tab isDisabled={!booking.stage.table}>Table</Tab>
                             <Tab isDisabled={!booking.stage.customer}>Info</Tab>
                             <Tab isDisabled={!booking.stage.details}>Detail</Tab>
-                            <Tab isDisabled={!booking.stage.confirm}>Ok</Tab>
+                            <Tab isDisabled={!booking.stage.confirm}>Book</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>

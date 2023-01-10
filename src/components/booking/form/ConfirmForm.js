@@ -16,70 +16,63 @@ import { Formik, Form } from 'formik'
 const ConfirmForm = () => {
     const [booking, setBooking] = useBookingContext();
 
+    const tableHeaders = [
+        "Date", "Time", "Guests", "Ocassion"
+    ]
+    const customerHeaders = [
+        "First Name", "Last Name", "Cellphone", "Email"
+    ]
     return (
     <Formik
-        initialValues={{table:booking.table, customer:booking.customer, details:booking.details}}
+        initialValues={booking}
         onSubmit={(values, actions) => {
-            console.log(values)
+            console.log(booking)
         }}
     >
         {(props) => (
         <Form>
             <FormCol>
-                <Wrap 
-                    width={"100%"}
-                    align={"stretch"}
-                >
-                    <FormRow 
-                        width={{
-                            base:"100%",
-                            md: "40%"
-                        }}>
-                        <Box fontWeight={600} width={"30%"}>
-                            {["Date", "Time", "Guests", "Ocassion"].map((item) =>
-                                <Text key={item}>{item}</Text>
-                            )}
+                <FormRow>
+                {
+                    Object.entries(booking.table).map(([key, value], i) => (
+                        <>
+                        <Box 
+                            width={{base:"40%", md:"20%"}} 
+                            key={key}
+                        >
+                            <Text as="b" key={`head-${key}`}>{tableHeaders[i]}</Text>
+                            <Text key={`text-${key}`} lineHeight={"1.8"}>{value}</Text>
                         </Box>
-                        <Box width={"60%"}>
-                            {Object.entries(booking.table).map(([key, value]) =>
-                                <Text key={key} textAlign={"right"} overflow={"scroll"}>{value}</Text>
-                            )}
+                        <Spacer></Spacer>
+                        </>
+                    ))
+                }
+                </FormRow>
+                <FormRow>
+                {
+                    Object.entries(booking.customer).map(([key, value], i) => (
+                        <>
+                        <Box 
+                            width={{base:"40%", md:"20%"}} 
+                            key={key}
+                        >
+                            <Text as="b" key={`head-${key}`}>{customerHeaders[i]}</Text>
+                            <Text key={`text-${key}`} lineHeight={"1.8"}>{value}</Text>
                         </Box>
-                    </FormRow>
+                        <Spacer></Spacer>
+                        </>
+                    ))
+                }
+                </FormRow>
+                <FormRow>
+                    <Box 
+                        width={{base:"100%", md:"100%"}} 
+                    >
+                        <Text as="b">Comments</Text>
+                        <Text>{booking.details.comments}</Text>
+                    </Box>
                     <Spacer></Spacer>
-                    <FormRow width={{
-                        base:"100%",
-                        md: "48%"
-                    }}>
-                        <Box fontWeight={600} width={"30%"}>
-                            {["First Name", "Last Name", "Phone", "Email"].map((item) =>
-                                <Text key={item}>{item}</Text>
-                            )}
-                        </Box>
-                        <Box width={"60%"}>
-                            {Object.entries(booking.customer).map(([key, value]) =>
-                                <Text key={key} textAlign={"right"}>{value}</Text>
-                            )}
-                        </Box>
-                    </FormRow>
-                    <FormRow width={{
-                        base:"100%",
-                        md: "48%"
-                    }}>
-                    <Box fontWeight={600} width={{
-                        base:"100%",
-                        md: "40%"
-                    }}>
-                        <Text>Comments</Text>
-                    </Box>
-                    <Box width={{
-                        base:"100%",
-                        md: "50%"
-                    }}>
-                        <Text textAlign={"left"}>{booking.details.comments}</Text>
-                    </Box>
-                    </FormRow>
-                </Wrap>
+                </FormRow>
             </FormCol>
             <SubmitButtom>
                 Submit
