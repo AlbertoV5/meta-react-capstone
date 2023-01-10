@@ -10,7 +10,7 @@ const Footer = () => {
    return (
     <SectionBase 
       as="footer"
-      backgroundColor={"gold"}
+      backgroundColor={"yellow.400"}
    >
       <Wrap
          id="footer-wrapper"
@@ -28,7 +28,8 @@ const Footer = () => {
                base:"40%",
                md:"20%"
             }}
-            src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
+            src={"https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=2000"}
+            // src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
          ></Image>
          <Spacer></Spacer>
          <Box width={{

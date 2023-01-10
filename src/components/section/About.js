@@ -53,7 +53,8 @@ const About = () => {
                     width={"50%"}
                     transform={"translate(-80px, -40px)"}
                     boxShadow={"10px 10px #33333333"}
-                    src={"https://sallysbakingaddiction.com/wp-content/uploads/2017/07/creamy-lemon-pie-3.jpg"}
+                    src={"https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"}
+                    // src={"https://sallysbakingaddiction.com/wp-content/uploads/2017/07/creamy-lemon-pie-3.jpg"}
                 ></Image>
             </HStack>
         </Wrap>
