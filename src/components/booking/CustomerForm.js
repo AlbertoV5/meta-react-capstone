@@ -20,7 +20,6 @@ import SubmitButtom from './SubmitButtom'
 
 
 const CustomerForm = ({handleTabChange}) => {
-
     const [booking, setBooking] = useBookingContext();
 
     return (

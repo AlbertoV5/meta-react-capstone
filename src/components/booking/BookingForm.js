@@ -26,7 +26,6 @@ const BookingForm = ({handleTabChange}) => {
     const [booking, setBooking] = useBookingContext();
     
     return (
-    // https://www.coursera.org/learn/principles-of-ux-ui-design/supplement/7slXe/solution-booking-a-table-on-the-little-lemon-website
     <Formik
         initialValues={booking.table}
         validationSchema={schema.table}
@@ -39,7 +38,7 @@ const BookingForm = ({handleTabChange}) => {
             );
             handleTabChange(1); // move to next tab index
         }}
-      >
+    >
     {(props) => (
     <Form>
         <VStack spacing={"1"} align={"center"} py={"2"}>
