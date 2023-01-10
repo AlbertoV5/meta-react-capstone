@@ -6,7 +6,8 @@ import {
     Box,
     Spacer,
     Wrap,
-    HStack
+    HStack,
+    Heading
 } from '@chakra-ui/react'
 import SubmitButtom from './SubmitButtom'
 import { useBookingContext, schema, completeSchema } from '../BookingContext'
@@ -22,12 +23,13 @@ const ConfirmForm = () => {
     const customerHeaders = [
         "First Name", "Last Name", "Cellphone", "Email"
     ]
+    const handleRequest = () => {
+        console.log(booking);
+    }
     return (
     <Formik
         initialValues={booking}
-        onSubmit={(values, actions) => {
-            console.log(booking)
-        }}
+        onSubmit={handleRequest}
     >
         {(props) => (
         <Form>
@@ -35,44 +37,30 @@ const ConfirmForm = () => {
                 <FormRow>
                 {
                     Object.entries(booking.table).map(([key, value], i) => (
-                        <>
-                        <Box 
-                            width={{base:"40%", md:"20%"}} 
-                            key={key}
-                        >
+                        <Box width={{base:"46%", md:"23%"}} key={key}>
                             <Text as="b" key={`head-${key}`}>{tableHeaders[i]}</Text>
                             <Text key={`text-${key}`} lineHeight={"1.8"}>{value}</Text>
                         </Box>
-                        <Spacer></Spacer>
-                        </>
                     ))
                 }
                 </FormRow>
                 <FormRow>
                 {
                     Object.entries(booking.customer).map(([key, value], i) => (
-                        <>
-                        <Box 
-                            width={{base:"40%", md:"20%"}} 
-                            key={key}
-                        >
+                        <Box width={{base:"46%", md:"23%"}} key={key}>
                             <Text as="b" key={`head-${key}`}>{customerHeaders[i]}</Text>
                             <Text key={`text-${key}`} lineHeight={"1.8"}>{value}</Text>
                         </Box>
-                        <Spacer></Spacer>
-                        </>
                     ))
                 }
                 </FormRow>
                 <FormRow>
-                    <Box 
-                        width={{base:"100%", md:"100%"}} 
-                    >
+                    <Box width={{base:"100%", md:"100%"}}>
                         <Text as="b">Comments</Text>
                         <Text>{booking.details.comments}</Text>
                     </Box>
-                    <Spacer></Spacer>
                 </FormRow>
+                <Spacer></Spacer>
             </FormCol>
             <SubmitButtom>
                 Submit
