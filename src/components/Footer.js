@@ -24,7 +24,10 @@ const Footer = () => {
          spacingY={"8"}
       >
          <Image
-            width={"150px"}
+            width={{
+               base:"40%",
+               md:"20%"
+            }}
             src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
          ></Image>
          <Spacer></Spacer>
