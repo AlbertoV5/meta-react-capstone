@@ -8,11 +8,17 @@ let current = new Date();
 export const date = `${current.getFullYear()}-${`${current.getMonth()+1}`.padStart(2, '0')}-${current.getDate()+1}`;
 
 export const bookingDefault = {
+    stage: {
+        table: true,
+        customer: false,
+        confirm: false,
+        done: false
+    },
     table: {
         date: "",
         time: "",
         guests: 0,
-        ocassion: "Other"
+        ocassion: ""
     },
     customer: {
         firstName: "",
@@ -24,12 +30,14 @@ export const bookingDefault = {
     }
 }
 
-export const bookingTableSchema = Yup.object().shape({
-    date: Yup.date().required("Required"),
-    time: Yup.string().required("Required"),
-    guests: Yup.number().min(1, "Minimum 1").max(12, "Minimum 2").required("Required"),
-    ocassion: Yup.string().required("Required"),
-});
+export const schema = {
+    table: Yup.object().shape({
+        date: Yup.date().required("Required"),
+        time: Yup.string().required("Required"),
+        guests: Yup.number().min(1, "Minimum 1").max(12, "Minimum 2").required("Required"),
+        ocassion: Yup.string().required("Required"),
+    })
+};
 
 export const BookingProvider = ({children}) => {
     const [booking, setBooking] = useState(bookingDefault);

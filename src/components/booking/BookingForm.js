@@ -17,107 +17,100 @@ import {
   } from '@chakra-ui/react'
 
 import React from 'react'
-import { useBookingContext, bookingTableSchema } from './BookingContext'
-import { Formik, useFormik } from 'formik'
+import { useBookingContext, schema } from './BookingContext'
+import { Formik, Field, Form } from 'formik'
 
-import FormErrorHandler from "./FormErrorHandler"
 
-const BookingForm = () => {
+const BookingForm = ({setTabIndex}) => {
     const [booking, setBooking] = useBookingContext();
-
-    const formik = useFormik({
-        initialValues: booking.table,
-        onSubmit: (values) => {
-            setBooking((prev) => values)
-            console.log(booking);
-        },
-        onChange: (values) => {
-            setBooking((prev) => values)
-        },
-        validationSchema: bookingTableSchema,
-    });
-
+    
     return (
-        // TODO: Formik
-        // https://www.coursera.org/learn/principles-of-ux-ui-design/supplement/7slXe/solution-booking-a-table-on-the-little-lemon-website
-    <form onSubmit={formik.handleSubmit}>
-        <VStack spacing={"4"} align={"center"}>
-            <HStack width={'100%'} spacing={"4"}>
-                <FormControl isInvalid={formik.errors.date != undefined}>
-                    <FormLabel>Date</FormLabel>
-                    <Input
-                        type="date" 
-                        id={"date"}
-                        name={"date"}
-                        {...formik.getFieldProps('date')}
-                        // defaultValue={formik.values.date}
-                        // onBlur={formik.handleBlur}
-                        // onChange={formik.handleChange}
-                        // checked={formik.checked}
-                    ></Input>
-                    <FormErrorHandler error={formik.errors.date} text={"Required"}/>
-                </FormControl>
-                <FormControl isInvalid={formik.errors.time != undefined}>
-                    <FormLabel>Time</FormLabel>
-                    <Input 
-                        type="time"
-                        id={"time"}
-                        name={"time"}
-                        {...formik.getFieldProps('time')}
-                        // defaultValue={formik.values.time}
-                        // onBlur={formik.handleBlur}
-                        // onChange={formik.handleChange}
-                        // checked={formik.checked}
-                    ></Input>
-                    <FormErrorHandler error={formik.errors.time} text={"Required"}/>
-                </FormControl>
+    // https://www.coursera.org/learn/principles-of-ux-ui-design/supplement/7slXe/solution-booking-a-table-on-the-little-lemon-website
+    <Formik
+        initialValues={booking.table}
+        validationSchema={schema.table}
+        onSubmit={(values, actions) => {
+          setBooking((prev) => ({
+                    ...prev,
+                    stage: {...prev.stage, customer: true},
+                    table: values
+                })
+            );
+            setTabIndex(1); // move to next tab index
+        }}
+      >
+    {(props) => (
+    <Form>
+        <VStack spacing={"2"} align={"center"}>
+            <HStack width={'100%'} spacing={"4"} align={"start"} height={"100px"}>
+                <Field name='date'>
+                    {({field, form}) => (
+                        <FormControl isInvalid={form.errors.date && form.touched.date}>
+                            <FormLabel>Date</FormLabel>
+                            <Input type="date" {...field}></Input>
+                            <FormErrorMessage>{form.errors.date}</FormErrorMessage>
+                        </FormControl>
+                    )}
+                </Field>
+                <Field name="time">
+                    {({field, form}) => (
+                    <FormControl isInvalid={form.errors.time && form.touched.time}>
+                        <FormLabel>Time</FormLabel>
+                        <Input type="time" {...field}></Input>
+                        <FormErrorMessage>{form.errors.time}</FormErrorMessage>
+                    </FormControl>
+                    )}
+                </Field>
             </HStack>
-            <HStack width={'100%'}>
-                <FormControl isInvalid={formik.errors.guests != undefined}>
-                    <FormLabel>Number of Guests</FormLabel>
-                    <NumberInput
-                        max={12} 
-                        min={0}
-                        // id={"guests"}
-                        // name={"guests"}
-                        // {...formik.getFieldProps('guests')}
-                        onChange={(e) => console.log(e)}
-                        // defaultValue={formik.values.guests}
-                        // onChange={formik.handleChange}
-                        // onChange={(e) => console.log(e)}
-                        // onBlur={formik.handleBlur}
-                    >
-                        <NumberInputField 
-                            name={"guests"} 
-                            id={"guests"}
-                            {...formik.getFieldProps('guests')}
-                        />
-                        <NumberInputStepper>
-                            <NumberIncrementStepper />
-                            <NumberDecrementStepper />
-                        </NumberInputStepper>
-                    </NumberInput>
-                    <FormErrorHandler error={formik.errors.guests} text={"Required"}/>
-                </FormControl>
-                <FormControl isInvalid={formik.errors.ocassion != undefined}>
-                    <FormLabel>Ocassion</FormLabel>
-                    <Select placeholder='Select' defaultValue={booking.table.ocassion}>
-                        <option value='Birthday'>Birthday</option>
-                        <option value='Anniversary'>Anniversary</option>
-                        <option value='Other'>Other</option>
-                    </Select>
-                    <FormErrorHandler error={formik.errors.ocassion} text={"Required"}/>
-                </FormControl>
+            <HStack width={'100%'} spacing={"4"} align={"start"} height={"100px"}>
+                <Field name='guests'>
+                    {({field, form}) => (
+                        <FormControl isInvalid={form.errors.guests && form.touched.guests}>
+                            <FormLabel htmlFor='guests'>Number of Guests</FormLabel>
+                            <NumberInput // https://stackoverflow.com/questions/67187550/formik-chakra-ui-input-number-dont-work
+                                min={0}
+                                max={12}
+                                id='guests'
+                                {...field}
+                                onChange={(val) =>
+                                    form.setFieldValue(field.name, val)
+                                }
+                            >
+                                <NumberInputField {...field}/>
+                                <NumberInputStepper>
+                                    <NumberIncrementStepper />
+                                    <NumberDecrementStepper />
+                                </NumberInputStepper>
+                            </NumberInput>
+                            <FormErrorMessage>{form.errors.guests}</FormErrorMessage>
+                        </FormControl>
+                    )}
+                </Field>
+                <Field name='ocassion'>
+                    {({field, form}) => (
+                        <FormControl isInvalid={form.errors.ocassion && form.touched.ocassion}>
+                            <FormLabel>Ocassion</FormLabel>
+                            <Select {...field} placeholder={"Select"}>
+                                <option value='Birthday'>Birthday</option>
+                                <option value='Anniversary'>Anniversary</option>
+                                <option value='Other'>Other</option>
+                            </Select>
+                            <FormErrorMessage>{form.errors.ocassion}</FormErrorMessage>
+                        </FormControl>
+                    )}
+                </Field>
             </HStack>
             <Box width={"100%"} align={"center"} paddingTop={"1em"}>
                 <Button 
                     colorScheme={"yellow"} 
                     width={"200px"}
-                    disabled
+                    type={"submit"}
                 >Continue</Button>
             </Box>
         </VStack>
-    </form>
+    </Form>
+    )}
+    </Formik>
     )
 }
 

@@ -10,10 +10,13 @@ import BookingForm from "./BookingForm"
 import CustomerForm from './CustomerForm'
 
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { useBookingContext } from './BookingContext'
 
 
 const BookingSection = () => {
     const [formProgress, setFormProgress] = useState(25);
+    const [booking, setBooking] = useBookingContext();
+    const [tabIndex, setTabIndex] = useState(0);
 
     return (
         <SectionBase id="booking-section">
@@ -41,19 +44,25 @@ const BookingSection = () => {
                         <Image></Image>
                         <Image></Image>
                     </HStack>
-                    <Tabs onChange={(i) => {setFormProgress((p) => (i)*33)}}>
+                    <Tabs 
+                        index={tabIndex}
+                        onChange={(i) => {
+                            setFormProgress((p) => (i)*33)
+                            setTabIndex(i)
+                        }}
+                    >
                         <TabList>
-                            <Tab>Table</Tab>
-                            <Tab>Customer</Tab>
-                            <Tab>Confirm</Tab>
-                            <Tab>Done</Tab>
+                            <Tab isDisabled={!booking.stage.table}>Table</Tab>
+                            <Tab isDisabled={!booking.stage.customer}>Customer</Tab>
+                            <Tab isDisabled={!booking.stage.confirm}>Confirm</Tab>
+                            <Tab isDisabled={!booking.stage.done}>Done</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>
-                                <BookingForm></BookingForm>
+                                <BookingForm setTabIndex={setTabIndex}></BookingForm>
                             </TabPanel>
                             <TabPanel>
-                                <CustomerForm></CustomerForm>
+                                <CustomerForm setTabIndex={setTabIndex}></CustomerForm>
                                 <Box width={"100%"} align={"center"} paddingTop={"2em"}>
                                     <Button 
                                         colorScheme={"yellow"} 
