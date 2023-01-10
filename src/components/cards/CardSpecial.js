@@ -3,10 +3,16 @@ import { Card, CardHeader, CardBody, CardFooter, Image, Heading, Text, HStack, S
 
 const CardSpecial = ({image, header, price, body, footer}) => {
   return (
-    <Card backgroundColor={"Background"} width={{
-      base:"100%",
-      md:"16em"
-    }}>
+    <Card 
+      backgroundColor={"Background"} 
+      width={{
+        base:"100%",
+        md:"16em"
+      }}
+      _hover={{transform:"translate(-4px, -4px)", boxShadow:"5px 10px #cccccc"}}
+      onClick={() => console.log("hi")}
+      cursor={"pointer"}
+    >
       <Image 
         src={image}
         borderRadius={"8"}
