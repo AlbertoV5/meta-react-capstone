@@ -21,7 +21,7 @@ import { useBookingContext, schema } from './BookingContext'
 import { Formik, Field, Form } from 'formik'
 
 
-const BookingForm = ({setTabIndex}) => {
+const BookingForm = ({handleTabChange}) => {
     const [booking, setBooking] = useBookingContext();
     
     return (
@@ -36,12 +36,12 @@ const BookingForm = ({setTabIndex}) => {
                     table: values
                 })
             );
-            setTabIndex(1); // move to next tab index
+            handleTabChange(1); // move to next tab index
         }}
       >
     {(props) => (
     <Form>
-        <VStack spacing={"2"} align={"center"}>
+        <VStack spacing={"1"} align={"center"} py={"4"}>
             <HStack width={'100%'} spacing={"4"} align={"start"} height={"100px"}>
                 <Field name='date'>
                     {({field, form}) => (
@@ -100,14 +100,14 @@ const BookingForm = ({setTabIndex}) => {
                     )}
                 </Field>
             </HStack>
-            <Box width={"100%"} align={"center"} paddingTop={"1em"}>
-                <Button 
-                    colorScheme={"yellow"} 
-                    width={"200px"}
-                    type={"submit"}
-                >Continue</Button>
-            </Box>
         </VStack>
+        <Box width={"100%"} align={"center"} >
+            <Button 
+                colorScheme={"yellow"} 
+                width={"200px"}
+                type={"submit"}
+            >Continue</Button>
+        </Box>
     </Form>
     )}
     </Formik>

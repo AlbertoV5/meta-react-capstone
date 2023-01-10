@@ -14,9 +14,14 @@ import { useBookingContext } from './BookingContext'
 
 
 const BookingSection = () => {
-    const [formProgress, setFormProgress] = useState(25);
+    const [formProgress, setFormProgress] = useState(0);
     const [booking, setBooking] = useBookingContext();
     const [tabIndex, setTabIndex] = useState(0);
+
+    const handleTabChange = (i) => {
+        setFormProgress((p) => (i)*33)
+        setTabIndex(i)
+    }
 
     return (
         <SectionBase id="booking-section">
@@ -39,17 +44,14 @@ const BookingSection = () => {
                     <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
                     <Heading textAlign={"left"} size="md">Chicago</Heading>
                     <Text fontSize={"lg"}>Find a table for any ocassion.</Text>
-                    <Progress value={formProgress} colorScheme={"gray"} />
-                    <HStack>
+                    <Progress value={formProgress} colorScheme={"gray"} size="sm"/>
+                    {/* <HStack>
                         <Image></Image>
                         <Image></Image>
-                    </HStack>
+                    </HStack> */}
                     <Tabs 
                         index={tabIndex}
-                        onChange={(i) => {
-                            setFormProgress((p) => (i)*33)
-                            setTabIndex(i)
-                        }}
+                        onChange={handleTabChange}
                     >
                         <TabList>
                             <Tab isDisabled={!booking.stage.table}>Table</Tab>
@@ -59,10 +61,10 @@ const BookingSection = () => {
                         </TabList>
                         <TabPanels>
                             <TabPanel>
-                                <BookingForm setTabIndex={setTabIndex}></BookingForm>
+                                <BookingForm handleTabChange={handleTabChange}></BookingForm>
                             </TabPanel>
                             <TabPanel>
-                                <CustomerForm setTabIndex={setTabIndex}></CustomerForm>
+                                <CustomerForm handleTabChange={handleTabChange}></CustomerForm>
                                 <Box width={"100%"} align={"center"} paddingTop={"2em"}>
                                     <Button 
                                         colorScheme={"yellow"} 

@@ -15,7 +15,7 @@ import {
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons'
 
 
-const CustomerForm = ({setTabIndex}) => {
+const CustomerForm = ({handleTabChange}) => {
   return (
     <VStack align={"center"} spacing={"4"}>
         <HStack width={'100%'}>
