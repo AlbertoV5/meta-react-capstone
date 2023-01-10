@@ -11,8 +11,8 @@ export const bookingDefault = {
     stage: {
         table: true,
         customer: false,
-        confirm: false,
-        done: false
+        details: false,
+        confirm: false
     },
     table: {
         date: "",
@@ -25,6 +25,9 @@ export const bookingDefault = {
         lastName: "",
         phoneNumber: "",
         email: "",
+    },
+    details: {
+        comments: ""
     }
 }
 
@@ -40,6 +43,9 @@ export const schema = {
         lastName: Yup.string().required("Required"),
         phoneNumber: Yup.string().required("Required"),
         email: Yup.string().email("Invalid Email").required("Required")
+    }),
+    details: Yup.object().shape({
+        comments: Yup.string(),
     })
 };
 

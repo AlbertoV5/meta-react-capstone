@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button, Box } from '@chakra-ui/react'
 
-const SubmitButtom = () => {
+const SubmitButtom = ({children}) => {
   return (
     <Box width={"100%"} align={"center"} paddingTop={"0.5em"}>
         <Button 
@@ -10,7 +10,7 @@ const SubmitButtom = () => {
             width={"200px"}
             type={"submit"}
         >
-            Continue
+            {children}
         </Button>
     </Box>
   )

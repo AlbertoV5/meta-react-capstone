@@ -6,8 +6,9 @@ import {
 import React, { useState } from 'react'
 
 import SectionBase from '../section/SectionBase'
-import BookingForm from "./BookingForm"
-import CustomerForm from './CustomerForm'
+import BookingForm from "./form/BookingForm"
+import CustomerForm from './form/CustomerForm'
+import DetailsForm from './form/DetailsForm'
 
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { useBookingContext } from './BookingContext'
@@ -48,12 +49,14 @@ const BookingSection = () => {
                     <Tabs 
                         index={tabIndex}
                         onChange={handleTabChange}
+                        variant={"enclosed"}
+                        colorScheme={"purple"}
                     >
                         <TabList>
                             <Tab isDisabled={!booking.stage.table}>Table</Tab>
                             <Tab isDisabled={!booking.stage.customer}>Customer</Tab>
-                            <Tab isDisabled={!booking.stage.confirm}>Confirm</Tab>
-                            <Tab isDisabled={!booking.stage.done}>Done</Tab>
+                            <Tab isDisabled={!booking.stage.details}>Confirm</Tab>
+                            <Tab isDisabled={!booking.stage.confirm}>Done</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>
@@ -63,12 +66,7 @@ const BookingSection = () => {
                                 <CustomerForm handleTabChange={handleTabChange}></CustomerForm>
                             </TabPanel>
                             <TabPanel>
-                                <Text>Confirm</Text>
-                                <Button 
-                                    colorScheme={"yellow"} 
-                                    width={"200px"}
-                                    disabled
-                                >Continue<ArrowForwardIcon/></Button>
+                                <DetailsForm handleTabChange={handleTabChange}></DetailsForm>
                             </TabPanel>
                             <TabPanel>
                                 Done
