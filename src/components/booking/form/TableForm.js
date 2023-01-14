@@ -6,30 +6,45 @@ import SubmitButtom from './SubmitButtom'
 import FieldInput from './field/FieldInput'
 import FieldNumber from "./field/FieldNumber"
 import FieldSelect from "./field/FieldSelect"
+import FieldInputCallback from "./field/FieldInputCallback"
 
 import FormRow from "./layout/FormRow"
 import FormCol from './layout/FormCol'
 import { Spacer, useBreakpointValue } from '@chakra-ui/react'
 
+const times = [
+    "9:30",
+    "10:00",
+    "12:30",
+    "14:00", 
+    "14:30",
+    "15:00",
+    "17:00",
+    "17:30",
+]
+const timesB = [
+    "9:00",
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30"
+]
 
 const availableTimes = (state, action) => {
-    if (action.date == 'Monday') return {avail: ["12:00", "14:00", "15:00", "17:00"]};
+    if (action.date == '2023-01-17') 
+        return {avail: times}
+    else if (action.date == 'Tuesday')
+        return {avail: times}
+    else
+        return {avail: times}
 }
 
 const TableForm = ({handleTabChange}) => {
 
     const isDesktop = useBreakpointValue({ base: false, md: true });
-
     const [booking, setBooking] = useBookingContext();
-    const [state, dispatch] = useReducer(availableTimes, {avail: []});
-    
-    // TODO:
-    // use state.avail to map all the options for available times form
-    // this means changing the current time input to a custom option
-    // the dispatch will carry the date 
-    // onChange={(value) => dispatch({date: value})}
-    // so that the reducer availableTimes function sets avail array based on the date
-    
+    const [state, dispatch] = useReducer(availableTimes, {avail: timesB});
+   
     return (
     <Formik
         initialValues={booking.table}
@@ -48,9 +63,17 @@ const TableForm = ({handleTabChange}) => {
         <Form>
             <FormCol>
                 <FormRow>
-                    <FieldInput type={"date"} name={"date"} label={"Date"}/>
+                    <FieldInputCallback 
+                        type={"date"} name={"date"} label={"Date"}
+                        callback={(e) => dispatch({date: e.target.value})}
+                    />
                     <Spacer></Spacer>
-                    <FieldInput type={"time"} name={"time"} label={"Time"}/>
+                    {/* <FieldInput type={"time"} name={"time"} label={"Time"}/> */}
+                    <FieldSelect name={"time"} label={"Time"} placeholder={"Select"}>
+                        {state.avail.map((time) => (
+                            <option key={time} value={time}>{time}</option>
+                        ))}
+                    </FieldSelect>
                     {isDesktop?null:<Spacer></Spacer>}
                     <FieldNumber name={"guests"} min={0} max={12} label={"Number of Guests"}/>
                     <Spacer></Spacer>

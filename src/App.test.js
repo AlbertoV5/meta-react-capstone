@@ -3,12 +3,14 @@ import userEvent from '@testing-library/user-event'
 import App from './App';
 
 
-test('chicago text', () => {
+test('Test Home page', () => {
   render(<App />);
   const linkElement = screen.getAllByText(/Chicago/);
   expect(linkElement[0]).toBeInTheDocument();
 });
 
+// fixes
+// https://stackoverflow.com/questions/39830580/jest-test-fails-typeerror-window-matchmedia-is-not-a-function
 window.matchMedia = window.matchMedia || function() {
   return {
       matches: false,
@@ -17,9 +19,11 @@ window.matchMedia = window.matchMedia || function() {
   };
 };
 
-test('full app rendering/navigating', async () => {
+
+// https://stackoverflow.com/questions/52783144/how-do-you-test-for-the-non-existence-of-an-element-using-jest-and-react-testing
+test('Test nav to form', async () => {
   render(<App/>);
-  // go to windoe
+  // go to form page
   const user = userEvent.setup();
   const nav = screen.getByText(/Booking/i);
   await user.click(nav);
@@ -37,4 +41,8 @@ test('full app rendering/navigating', async () => {
       expect(required[0]).toBeInTheDocument();
     }
   );
+})
+
+test("Test available times in form", async () => {
+  
 })
