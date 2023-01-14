@@ -13,7 +13,7 @@ import FormCol from './layout/FormCol'
 import { Spacer, useBreakpointValue } from '@chakra-ui/react'
 
 const times = [
-    "9:30",
+    "09:30",
     "10:00",
     "12:30",
     "14:00", 
@@ -23,7 +23,7 @@ const times = [
     "17:30",
 ]
 const timesB = [
-    "9:00",
+    "09:00",
     "10:00",
     "10:30",
     "11:00",
@@ -71,7 +71,7 @@ const TableForm = ({handleTabChange}) => {
                     {/* <FieldInput type={"time"} name={"time"} label={"Time"}/> */}
                     <FieldSelect name={"time"} label={"Time"} placeholder={"Select"}>
                         {state.avail.map((time) => (
-                            <option key={time} value={time}>{time}</option>
+                            <option id={`time-${time.replace(":","")}`} key={time} value={time}>{time}</option>
                         ))}
                     </FieldSelect>
                     {isDesktop?null:<Spacer></Spacer>}
@@ -85,7 +85,7 @@ const TableForm = ({handleTabChange}) => {
                     {isDesktop?null:<Spacer></Spacer>}
                 </FormRow>
             </FormCol>
-            <SubmitButtom>
+            <SubmitButtom id={"table-submit"}>
                 Continue
             </SubmitButtom>
         </Form>

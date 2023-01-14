@@ -14,7 +14,7 @@ const FieldTextArea = ({name, label, placeholder, helper, children}) => {
     <Field name={name}>
         {({field, form}) => (
             <FormControl isInvalid={form.errors[name] && form.touched[name]}>
-                <FormLabel>{label}</FormLabel>
+                <FormLabel htmlFor={name}>{label}</FormLabel>
                 <Textarea 
                   {...field} 
                   placeholder={placeholder?placeholder:label}

@@ -18,11 +18,11 @@ const FieldInputCallback = ({type, name, label, placeholder, callback, children}
     <Field name={name}>
         {({field, form}) => (
           <FormWrapper form={form} name={name}>
-              <FormLabel>{label}</FormLabel>
+              <FormLabel htmlFor={name}>{label}</FormLabel>
               <Input type={type} {...field} onChange={(e) => {
                 field.onChange(e);
                 callback(e);
-              }} placeholder={placeholder?placeholder:label}></Input>
+              }} id={name} placeholder={placeholder?placeholder:label}></Input>
               <FormErrorMessage display={"block"} textAlign={"right"}>
                   {form.errors[name]}
               </FormErrorMessage>

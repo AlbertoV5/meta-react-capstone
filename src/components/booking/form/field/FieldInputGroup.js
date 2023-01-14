@@ -17,7 +17,7 @@ const FieldInputGroup = ({type, name, label, placeholder, children}) => {
     <Field name={name}>
         {({field, form}) => (
             <FormWrapper form={form} name={name}>
-                <FormLabel>{label}</FormLabel>
+                <FormLabel htmlFor={name}>{label}</FormLabel>
                 <InputGroup>
                     {children}
                     <Input type={type} {...field} placeholder={placeholder?placeholder:label} />

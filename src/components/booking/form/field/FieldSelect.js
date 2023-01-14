@@ -14,8 +14,8 @@ const FieldSelect = ({name, label, placeholder, children}) => {
     <Field name={name}>
         {({field, form}) => (
         <FormWrapper form={form} name={name}>
-            <FormLabel>{label}</FormLabel>
-            <Select {...field} placeholder={placeholder}>
+            <FormLabel htmlFor={name}>{label}</FormLabel>
+            <Select id={name} {...field} placeholder={placeholder}>
                 {children}
             </Select>
             <FormErrorMessage display={"block"} textAlign={"right"}>{form.errors[name]}</FormErrorMessage>
