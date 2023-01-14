@@ -11,6 +11,7 @@ const MenuLinks = (props) => {
             />
             <Link
             to="/"
+            id="nav-home"
             >
                 <Button variant={"ghost"} >
                     Home
@@ -18,6 +19,7 @@ const MenuLinks = (props) => {
             </Link>
             <a
                 href="#about-section"
+                id="nav-about"
             >
                 <Button variant={"ghost"} >
                     About
@@ -25,6 +27,7 @@ const MenuLinks = (props) => {
             </a>
             <Link
             to="/menu"
+            id="nav-menu"
             >
                 <Button variant={"ghost"} >
                     Menu
@@ -32,6 +35,7 @@ const MenuLinks = (props) => {
             </Link>
             <Link
             to="/booking"
+            id="nav-booking"
             >
                 <Button variant={"ghost"} >
                     Booking
@@ -39,6 +43,7 @@ const MenuLinks = (props) => {
             </Link>
             <Link 
             to="/order-online"
+            id="nav-order-online"
             >
                 <Button variant={"ghost"} >
                     Order Online
@@ -47,6 +52,7 @@ const MenuLinks = (props) => {
             </Link>
             <Link
             to="/login"
+            id="nav-login"
             >
                 <Button variant={"ghost"} >
                     Login

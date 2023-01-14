@@ -1,6 +1,6 @@
 import { 
     Heading, HStack, Text, VStack, Image, Spacer,
-    Tabs, TabList, TabPanels, Tab, TabPanel,
+    Tabs, TabList, TabPanels, Tab, TabPanel, Select,
     Progress
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
