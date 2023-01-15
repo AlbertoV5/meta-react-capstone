@@ -16,7 +16,7 @@ export const bookingDefault = {
     },
     table: {
         date: "",
-        time: "", // "13:00"
+        time: "", // "17:00"
         guests: 0,
         ocassion: ""
     },

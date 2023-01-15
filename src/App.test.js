@@ -72,28 +72,26 @@ test("Test Available Times", async () => {
   const time = screen.getByLabelText(/Time/);
   const ocassion = screen.getByLabelText(/Ocassion/);
   const guests = app.container.querySelector("#guests");
-  const incrementButton = app.container.querySelector("#increment-step");
   const submitButton = app.container.querySelector("#table-submit");
   
   // expect failure
   fireEvent.change(date, { target: { value: "2023-10-01"}});
+  await act(async () => {
+    fireEvent.click(submitButton);
+  });
   expect(handleSubmit).not.toHaveBeenCalled();
-  // succeed
+  // expect success
   fireEvent.change(time, { target: { value: "17:00"}});
   fireEvent.change(ocassion, { target: { value: "Other"}});
   fireEvent.change(guests, { target: { value: 2}});
-  
   await act(async () => {
-    fireEvent.click(incrementButton);
+    fireEvent.click(submitButton);
   });
-  fireEvent.click(submitButton);
   // expect(handleSubmit).toHaveBeenCalled();
-
+  expect(handleSubmit).toHaveBeenCalled();
   // unavailable hours
   expect(app.container.querySelector("#time-0000")).not.toBeInTheDocument();
   expect(app.container.querySelector("#time-0500")).not.toBeInTheDocument();
-  // try to submit
-  await user.click(app.container.querySelector("#table-submit"))
 })
 
 test("Local Storage", () => {

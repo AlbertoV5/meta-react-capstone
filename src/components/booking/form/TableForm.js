@@ -22,8 +22,8 @@ const getAvailableTimes = (state, action) => (
     : state 
 )
 
-const TableForm = ({handleTabChange}) => {
-    
+const TableForm = ({handleTabChange, onSubmit}) => {
+
     const isDesktop = useBreakpointValue({ base: false, md: true });
     const [booking, setBooking] = useBookingContext();
     const [state, dispatch] = useReducer(getAvailableTimes, {}, initializeTimes)
@@ -32,7 +32,8 @@ const TableForm = ({handleTabChange}) => {
     <Formik
         initialValues={booking.table}
         validationSchema={schema.table}
-        onSubmit={(values, actions) => {
+        onSubmit={onSubmit?onSubmit
+        : (values, actions) => {
           setBooking((prev) => ({
                     ...prev,
                     stage: {...prev.stage, customer: true},
