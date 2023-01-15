@@ -72,7 +72,7 @@ test("Test Available Times", async () => {
   // expect failure
   expect(app.container.querySelector("#time-0900")).not.toBeInTheDocument();
   expect(app.container.querySelector("#time-1400")).toBeInTheDocument();
-
+  // try to submit
   await user.click(app.container.querySelector("#table-submit"))
   
 })

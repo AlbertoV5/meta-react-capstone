@@ -12,38 +12,22 @@ import FormRow from "./layout/FormRow"
 import FormCol from './layout/FormCol'
 import { Spacer, useBreakpointValue } from '@chakra-ui/react'
 
-const times = [
-    "09:30",
-    "10:00",
-    "12:30",
-    "14:00", 
-    "14:30",
-    "15:00",
-    "17:00",
-    "17:30",
-]
-const timesB = [
-    "09:00",
-    "10:00",
-    "10:30",
-    "11:00",
-    "11:30"
-]
+import { fetchAPI } from "./api"
 
-const availableTimes = (state, action) => {
-    if (action.date == '2023-01-17') 
-        return {avail: times}
-    else if (action.date == 'Tuesday')
-        return {avail: times}
-    else
-        return {avail: times}
-}
+
+const initializeTimes = () => ({avail: fetchAPI(new Date())});
+
+const getAvailableTimes = (state, action) => (
+    action.date !== undefined
+    ? {avail: fetchAPI(new Date(action.date))}
+    : state 
+)
 
 const TableForm = ({handleTabChange}) => {
 
     const isDesktop = useBreakpointValue({ base: false, md: true });
     const [booking, setBooking] = useBookingContext();
-    const [state, dispatch] = useReducer(availableTimes, {avail: timesB});
+    const [state, dispatch] = useReducer(getAvailableTimes, {}, initializeTimes)
    
     return (
     <Formik
