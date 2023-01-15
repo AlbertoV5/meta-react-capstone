@@ -6,39 +6,38 @@ import { HStack, Image, Button, ButtonGroup } from "@chakra-ui/react";
 const MenuLinks = (props) => {
     return (
         <HStack spacing={"4"} width={"100%"} justify={"center"}>
-            <Image
-                src="https://www.48hourslogo.com/oss/attachments/2022/01/13/347418572/fce5b08add13e667d5855320c8ab6b39.png"
-            />
+            <Link to="/#hero-section">
+                <Image
+                    src="https://www.48hourslogo.com/oss/attachments/2022/01/13/347418572/fce5b08add13e667d5855320c8ab6b39.png"
+                />
+            </Link>
             <Link
-            to="/"
+            to="/#hero-section"
             id="nav-home"
             >
                 <Button variant={"ghost"} >
                     Home
                 </Button>
             </Link>
-            <a
-                href="#about-section"
-                id="nav-about"
-            >
+            <Link to="/#about-section" >
                 <Button variant={"ghost"} >
                     About
                 </Button>
-            </a>
+            </Link>
+            <Link
+                to="/booking"
+                id="nav-booking"
+            >
+                <Button variant={"ghost"} >
+                    Booking
+                </Button>
+            </Link>
             <Link
             to="/menu"
             id="nav-menu"
             >
                 <Button variant={"ghost"} >
                     Menu
-                </Button>
-            </Link>
-            <Link
-            to="/booking"
-            id="nav-booking"
-            >
-                <Button variant={"ghost"} >
-                    Booking
                 </Button>
             </Link>
             <Link 
@@ -48,7 +47,6 @@ const MenuLinks = (props) => {
                 <Button variant={"ghost"} >
                     Order Online
                 </Button>
-
             </Link>
             <Link
             to="/login"

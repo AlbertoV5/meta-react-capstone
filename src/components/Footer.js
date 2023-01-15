@@ -37,13 +37,13 @@ const Footer = () => {
             base:"40%",
             md:"20%"
          }}>
-            <Heading size="sm">Doormat Navigation</Heading>
+            <Heading size="sm">Navigation</Heading>
             <br></br>
             <VStack align={"left"}>
-               <Link to="/">Home</Link>
-               <a href="#about-section">About</a>
+               <Link to="/#hero-section">Home</Link>
+               <Link to="/#about-section">About</Link>
+               <Link to="/booking">Booking</Link>
                <Link to="/menu">Menu</Link>
-               <Link to="/reservations">Reservations</Link>
                <Link to="/order-online">Order Online</Link>
                <Link to="/login">Login</Link>
             </VStack>       
@@ -56,9 +56,9 @@ const Footer = () => {
             <Heading size="sm">Contact</Heading>
             <br></br>
             <VStack align={"left"}>
-               <Link>Address</Link>
-               <Link>Phone Number</Link>
-               <Link>Email</Link>
+               <b>5316 Tinker St, Boise, Illinois</b>
+               <b>202-555-0114</b>
+               <b>contact@example.com</b>
             </VStack>
          </Box>
          <Spacer></Spacer>
@@ -69,9 +69,9 @@ const Footer = () => {
             <Heading size="sm">Social Media Links</Heading>
             <br></br>
             <VStack align={"left"}>
-               <Link>Twitter</Link>
-               <Link>Instagram</Link>
-               <Link>YouTube</Link>
+               <a href="https://twitter.com/" target={"_blank"}>Twitter</a>
+               <a href="https://www.instagram.com/" target={"_blank"}>Instagram</a>
+               <a href="https://www.youtube.com/" target={"_blank"}>YouTube</a>
             </VStack>
          </Box>
          <Spacer></Spacer>

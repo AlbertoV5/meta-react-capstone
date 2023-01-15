@@ -5,22 +5,23 @@
 ### TO-DO:
 
 1. Make the NavBar adapt to mobile view
-2. Revisit accessibility
-3. Improve Footer
-4. Add Mock Menu
-5. Add Mock Order Online
-6. Add Mock Login
+2. Improve Footer
+3. Add Mock Menu
+4. Add Mock Order Online
+5. Add Mock Login
 
 
 ### Deployment
+
+Deployment: https://albertov5.github.io/meta-react-capstone
 
 ```shell
 npm run deploy
 ```
 
-Deployed to GitHub pages: https://github.com/gitname/react-gh-pages
+Deployed to GitHub pages tutorial: https://github.com/gitname/react-gh-pages
 
-Remember to add basename to BrowserRouter for React Router.
+Remember to add "basename" to BrowserRouter for React Router.
 
 ```js
 <BrowserRouter basename={"meta-react-capstone"}>

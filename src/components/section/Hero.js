@@ -1,4 +1,5 @@
 import { Heading, Text, Image, Button, HStack, VStack, Spacer } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import SectionBase from "./SectionBase"
 
 
@@ -25,9 +26,11 @@ const Hero = () => {
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </Text>
             <Spacer py={"0.5em"}></Spacer>
-            <Button width={"200px"} colorScheme={"yellow"} color={"black"} size="md">
-                Reserve a Table
-            </Button>
+            <Link to="/booking">
+                <Button width={"200px"} colorScheme={"yellow"} color={"black"} size="md">
+                    Reserve a Table
+                </Button>
+            </Link>
         </VStack>
         <Spacer height={"0"}></Spacer>
         <HStack

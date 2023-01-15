@@ -3,6 +3,7 @@ import CardSpecial from "../cards/CardSpecial";
 import { HStack, VStack, Heading, Text, Button, Wrap } from "@chakra-ui/react";
 
 import SectionBase from "./SectionBase"
+import { Link } from "react-router-dom";
 
 
 const Highlights = () => {
@@ -27,9 +28,11 @@ const Highlights = () => {
                     <Heading size={"xl"} width={"80%"}>
                        Specials
                     </Heading>
-                    <Button colorScheme={"yellow"} color={"black"} size="md">
-                        Online Menu
-                    </Button>
+                    <Link to="/menu">
+                        <Button colorScheme={"yellow"} color={"black"} size="md">
+                            Online Menu
+                        </Button>
+                    </Link>
                 </HStack>
                 <Wrap spacing={"10"}>
                     <CardSpecial
