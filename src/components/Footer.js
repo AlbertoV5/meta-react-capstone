@@ -1,10 +1,7 @@
-import MenuLinks from "./links/MenuLinks"
-
 import SectionBase from "./section/SectionBase";
-
 import {Link} from "react-router-dom"
+import { VStack, Image, Spacer, Box, Text, Heading, Wrap } from "@chakra-ui/react";
 
-import { HStack, VStack, Image, Spacer, Box, Heading, Text, UnorderedList, ListItem, Wrap } from "@chakra-ui/react";
 
 const Footer = () => {
    return (
@@ -37,9 +34,8 @@ const Footer = () => {
             base:"40%",
             md:"20%"
          }}>
-            <Heading size="sm">Navigation</Heading>
-            <br></br>
             <VStack align={"left"}>
+               <Heading size="sm">Navigation</Heading>
                <Link to="/#hero-section">Home</Link>
                <Link to="/#about-section">About</Link>
                <Link to="/booking">Booking</Link>
@@ -53,12 +49,11 @@ const Footer = () => {
             base:"40%",
             md:"20%"
          }}>
-            <Heading size="sm">Contact</Heading>
-            <br></br>
             <VStack align={"left"}>
-               <b>5316 Tinker St, Boise, Illinois</b>
-               <b>202-555-0114</b>
-               <b>contact@example.com</b>
+               <Heading size="sm">Contact</Heading>
+               <Text>5316 Tinker St, Boise, Illinois</Text>
+               <Text>202-555-0114</Text>
+               <Text>contact@example.com</Text>
             </VStack>
          </Box>
          <Spacer></Spacer>
@@ -66,9 +61,8 @@ const Footer = () => {
             base:"40%",
             md:"20%"
          }}>
-            <Heading size="sm">Social Media Links</Heading>
-            <br></br>
             <VStack align={"left"}>
+               <Heading size="sm">Social Media</Heading>
                <a href="https://twitter.com/" target={"_blank"}>Twitter</a>
                <a href="https://www.instagram.com/" target={"_blank"}>Instagram</a>
                <a href="https://www.youtube.com/" target={"_blank"}>YouTube</a>

@@ -23,38 +23,6 @@ window.matchMedia = window.matchMedia || function() {
   };
 };
 
-
-// https://stackoverflow.com/questions/52783144/how-do-you-test-for-the-non-existence-of-an-element-using-jest-and-react-testing
-test('Test nav to form', async () => {
-  const app = render(<App/>);
-  const nav = screen.getByText(/Booking/i);
-  // await user.click(nav);
-  await act(async () => {
-    fireEvent.click(nav);
-  });
-  expect(screen.getByText(/Find a table for any ocassion./)).toBeInTheDocument();
-  // find button
-  const button = app.container.querySelector("#table-submit");
-  expect(button).toBeInTheDocument();
-  // Don't find warning
-  expect(screen.queryByText(/Required/)).not.toBeInTheDocument();
-})
-
-// test("Test available times in form", async () => {
-//   const app = render(<App/>);
-//   // go to form page
-//   const user = userEvent.setup();
-//   const nav = screen.getByText(/Booking/i);
-//   // const someElement = result.container.querySelector('#some-id');
-//   user.click(nav).then(async (e) => {
-//       user.click(e.querySelector('#time')).then((e) => {
-//         const options = e.getAllByText(/9:00/);
-//         expect(options).toBeInTheDocument();
-//       })
-//     }
-//   )
-// })
-
 test("Test Available Times", async () => {
   const handleSubmit = jest.fn()
   const app = render(

@@ -1,4 +1,4 @@
-import { Text, VStack, HStack, Heading } from '@chakra-ui/react'
+import { Text, VStack, Heading } from '@chakra-ui/react'
 import React from 'react'
 import SectionBase from './SectionBase'
 

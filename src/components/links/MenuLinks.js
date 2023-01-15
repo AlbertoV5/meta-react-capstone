@@ -7,14 +7,14 @@ import { HashLink } from 'react-router-hash-link';
 const MenuLinks = (props) => {
     return (
         <HStack spacing={"4"} width={"100%"} justify={"center"}>
-            <Link to="/">
+            <HashLink to="/#top">
                 <Image
                     src="https://www.48hourslogo.com/oss/attachments/2022/01/13/347418572/fce5b08add13e667d5855320c8ab6b39.png"
                 />
-            </Link>
+            </HashLink>
             <HashLink
-            to="/#hero-section"
-            id="nav-home"
+                to="/#hero-section"
+                id="nav-home"
             >
                 <Button variant={"ghost"} >
                     Home
@@ -25,33 +25,32 @@ const MenuLinks = (props) => {
                     About
                 </Button>
             </HashLink>
-            <Link
-                to="/booking"
+            <HashLink
+                to="/booking#top"
                 id="nav-booking"
             >
-                <Button variant={"ghost"} >
-                    Booking
-                </Button>
-            </Link>
-            <Link
-            to="/menu"
-            id="nav-menu"
+                <Button variant={"ghost"}>
+                    Booking</Button>
+            </HashLink>
+            <HashLink
+                to="/menu#top"
+                id="nav-menu"
             >
                 <Button variant={"ghost"} >
                     Menu
                 </Button>
-            </Link>
-            <Link 
-            to="/order-online"
-            id="nav-order-online"
+            </HashLink>
+            <HashLink 
+                to="/order-online#top"
+                id="nav-order-online"
             >
                 <Button variant={"ghost"} >
                     Order Online
                 </Button>
-            </Link>
+            </HashLink>
             <Link
-            to="/login"
-            id="nav-login"
+                to="/login#top"
+                id="nav-login"
             >
                 <Button variant={"ghost"} >
                     Login
