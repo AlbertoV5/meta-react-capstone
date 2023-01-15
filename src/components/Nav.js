@@ -7,11 +7,19 @@ const Nav = () => {
     return (
         <Container
             as="nav"
-            maxW={"100vw"}
-            backgroundColor={"Background"}
-            position={"fixed"}
-            height={"4.5em"}
-            zIndex={100}
+            height={{
+                base:"4.5em",
+                md:"4.5em"
+            }}
+            width="100vw"
+            maxW="100vw"
+            bg="bg-surface" 
+            boxShadow={"sm"}
+            style={{
+                position: "fixed"
+            }}
+            backgroundColor={"chakra-body-bg"}
+            zIndex={"100"}
         >
             <MenuLinks/>
         </Container>

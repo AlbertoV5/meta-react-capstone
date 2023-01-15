@@ -40,7 +40,7 @@ const Footer = () => {
                <Link to="/#about-section">About</Link>
                <Link to="/booking">Booking</Link>
                <Link to="/menu">Menu</Link>
-               <Link to="/order-online">Order Online</Link>
+               {/* <Link to="/order-online">Order Online</Link> */}
                <Link to="/login">Login</Link>
             </VStack>       
          </Box>

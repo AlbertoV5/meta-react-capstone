@@ -10,7 +10,7 @@ import BookingPage from "./components/BookingPage"
 import ConfirmedBookingPage from './components/ConfirmedBookingPage';
 import MenuPage from "./components/MenuPage"
 import OrderOnlinePage from "./components/OrderOnlinePage"
-
+import LoginPage from "./components/LoginPage"
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
             <Route path="/booking" element={<BookingPage/>}></Route>
             <Route path="/confirmed-booking" element={<ConfirmedBookingPage/>}></Route>
             <Route path="/order-online" element={<OrderOnlinePage/>}></Route>
+            <Route path="/login" element={<LoginPage/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
