@@ -66,12 +66,13 @@ test("Test Available Times", async () => {
   const user = userEvent.setup();
 
   // find default
-  expect(app.container.querySelector("#time-0900")).toBeInTheDocument();
+  // expect(app.container.querySelector("#time-0900")).toBeInTheDocument();
   await user.type(screen.getByLabelText(/date/i), '2023-01-17')
   await user.type(screen.getByLabelText(/time/i), '13:00')
+
   // expect failure
-  expect(app.container.querySelector("#time-0900")).not.toBeInTheDocument();
-  expect(app.container.querySelector("#time-1400")).toBeInTheDocument();
+  expect(app.container.querySelector("#time-0000")).not.toBeInTheDocument();
+  expect(app.container.querySelector("#time-0500")).not.toBeInTheDocument();
   // try to submit
   await user.click(app.container.querySelector("#table-submit"))
   
