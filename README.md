@@ -11,3 +11,11 @@
 5. Add Mock Order Online
 6. Add Mock Login
 
+
+### Deployment
+
+```shell
+npm run deploy
+```
+
+Deployed to GitHub pages: https://github.com/gitname/react-gh-pages
