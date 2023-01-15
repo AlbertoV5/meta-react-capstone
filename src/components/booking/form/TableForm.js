@@ -3,7 +3,6 @@ import { useBookingContext, schema } from '../BookingContext'
 import { Formik, Form } from 'formik'
 import SubmitButtom from './SubmitButtom'
 
-import FieldInput from './field/FieldInput'
 import FieldNumber from "./field/FieldNumber"
 import FieldSelect from "./field/FieldSelect"
 import FieldInputCallback from "./field/FieldInputCallback"

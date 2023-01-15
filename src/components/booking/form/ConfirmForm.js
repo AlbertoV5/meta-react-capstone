@@ -19,16 +19,14 @@ const ConfirmForm = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (submitted)
-            navigate("/confirmed-booking")
+        if (submitted){
+            localStorage.setItem("booking", JSON.stringify(booking)) // store in browser
+            navigate("/confirmed-booking") // route
+        }
     }, [submitted])
     
-    const tableHeaders = [
-        "Date", "Time", "Guests", "Ocassion"
-    ]
-    const customerHeaders = [
-        "First Name", "Last Name", "Cellphone", "Email"
-    ]
+    const tableHeaders = ["Date", "Time", "Guests", "Ocassion"]
+    const customerHeaders = ["First Name", "Last Name", "Cellphone", "Email"]
     return (
     <Formik
         initialValues={booking}
