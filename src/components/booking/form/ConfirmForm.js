@@ -1,35 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FormRow from './layout/FormRow'
 import FormCol from './layout/FormCol'
 import {
     Text,
     Box,
     Spacer,
-    Wrap,
-    HStack,
-    Heading
 } from '@chakra-ui/react'
 import SubmitButtom from './SubmitButtom'
-import { useBookingContext, schema, completeSchema } from '../BookingContext'
+import { useBookingContext } from '../BookingContext'
 import { Formik, Form } from 'formik'
+import { submitAPI } from './api'
+import { useNavigate } from "react-router-dom";
 
 
 const ConfirmForm = () => {
     const [booking, setBooking] = useBookingContext();
+    const [submitted, setSubmitted] = useState(false);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        if (submitted)
+            navigate("/confirmed-booking")
+    }, [submitted])
+    
     const tableHeaders = [
         "Date", "Time", "Guests", "Ocassion"
     ]
     const customerHeaders = [
         "First Name", "Last Name", "Cellphone", "Email"
     ]
-    const handleRequest = () => {
-        console.log(booking);
-    }
     return (
     <Formik
         initialValues={booking}
-        onSubmit={handleRequest}
+        onSubmit={() => {
+            submitAPI(booking)
+            setSubmitted(() => true)
+        }}
     >
         {(props) => (
         <Form>

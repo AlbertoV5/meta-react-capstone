@@ -23,7 +23,7 @@ const BookingSection = () => {
         setFormProgress((p) => (i)*34)
         setTabIndex(i)
     }
-
+    
     return (
         <SectionBase id="booking-section">
             <HStack width={{
