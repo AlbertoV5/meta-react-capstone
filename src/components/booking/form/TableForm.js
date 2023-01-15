@@ -23,7 +23,7 @@ const getAvailableTimes = (state, action) => (
 )
 
 const TableForm = ({handleTabChange}) => {
-
+    
     const isDesktop = useBreakpointValue({ base: false, md: true });
     const [booking, setBooking] = useBookingContext();
     const [state, dispatch] = useReducer(getAvailableTimes, {}, initializeTimes)

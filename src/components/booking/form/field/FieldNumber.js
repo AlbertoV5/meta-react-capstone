@@ -33,8 +33,8 @@ const FieldNumber = ({name, label, min, max, children}) => {
                         >
                             <NumberInputField {...field}/>
                             <NumberInputStepper>
-                                <NumberIncrementStepper />
-                                <NumberDecrementStepper />
+                                <NumberIncrementStepper id={"increment-step"} />
+                                <NumberDecrementStepper id={"decrement-step"} />
                             </NumberInputStepper>
                         </NumberInput>
                     <FormErrorMessage display={"block"} textAlign={"right"}>{form.errors[name]}</FormErrorMessage>

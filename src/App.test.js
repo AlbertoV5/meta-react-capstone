@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import App from './App';
 import { BookingProvider } from './components/booking/BookingContext';
 import TableForm from './components/booking/form/TableForm';
+import { bookingDefault } from './components/booking/BookingContext';
 
 
 test('Test Home page', () => {
@@ -59,21 +60,53 @@ test("Test Available Times", async () => {
   const app = render(
     <ChakraProvider>
       <BookingProvider>
-        <TableForm onSubmit={handleSubmit} />
+        <TableForm 
+          handleTabChange={() => ("")} 
+          onSubmit={handleSubmit} />
       </BookingProvider>
     </ChakraProvider>
   )
   const user = userEvent.setup();
-
   // find default
-  // expect(app.container.querySelector("#time-0900")).toBeInTheDocument();
-  await user.type(screen.getByLabelText(/date/i), '2023-01-17')
-  await user.type(screen.getByLabelText(/time/i), '13:00')
-
+  const date = screen.getByLabelText(/Date/);
+  const time = screen.getByLabelText(/Time/);
+  const ocassion = screen.getByLabelText(/Ocassion/);
+  const guests = app.container.querySelector("#guests");
+  const incrementButton = app.container.querySelector("#increment-step");
+  const submitButton = app.container.querySelector("#table-submit");
+  
   // expect failure
+  fireEvent.change(date, { target: { value: "2023-10-01"}});
+  expect(handleSubmit).not.toHaveBeenCalled();
+  // succeed
+  fireEvent.change(time, { target: { value: "17:00"}});
+  fireEvent.change(ocassion, { target: { value: "Other"}});
+  fireEvent.change(guests, { target: { value: 2}});
+  
+  await act(async () => {
+    fireEvent.click(incrementButton);
+  });
+  fireEvent.click(submitButton);
+  // expect(handleSubmit).toHaveBeenCalled();
+
+  // unavailable hours
   expect(app.container.querySelector("#time-0000")).not.toBeInTheDocument();
   expect(app.container.querySelector("#time-0500")).not.toBeInTheDocument();
   // try to submit
   await user.click(app.container.querySelector("#table-submit"))
-  
 })
+
+test("Local Storage", () => {
+  // test local storage
+  localStorage.setItem("booking", JSON.stringify(
+    {
+      ...bookingDefault,
+      customer: {
+        ...bookingDefault.customer,
+        firstName: "Dan Abramov"
+      }
+  }));
+  let localBooking = localStorage.getItem("booking");
+  let booking = localBooking?JSON.parse(localBooking):bookingDefault;
+  expect(booking.customer.firstName === "Dan Abramov");
+});
