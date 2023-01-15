@@ -1,9 +1,15 @@
-import MenuLinks from "./links/MenuLinks"
+import { Container, useBreakpointValue, useDisclosure, IconButton, HStack } from "@chakra-ui/react";
+import { FiMenu } from 'react-icons/fi'
 
-import { Container } from "@chakra-ui/react";
+import MenuLinks from "./links/MenuLinks"
+import MenuDrawer from "./links/MenuDrawer";
+import Logo from "./links/Logo"
 
 
 const Nav = () => {
+    const isDesktop = useBreakpointValue({ base: false, md: true });
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
         <Container
             as="nav"
@@ -21,7 +27,20 @@ const Nav = () => {
             backgroundColor={"chakra-body-bg"}
             zIndex={"100"}
         >
-            <MenuLinks/>
+        {
+            isDesktop
+            ? <MenuLinks/>
+            : <HStack px={"2em"} justify={"space-between"}>
+                <Logo></Logo>
+                <IconButton
+                    variant="ghost"
+                    icon={<FiMenu fontSize="1.25rem" />}
+                    aria-label="Open Menu"
+                    onClick={onOpen}
+                />
+            </HStack>
+        }
+        <MenuDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
         </Container>
     )
 }

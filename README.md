@@ -6,9 +6,6 @@ Meta Front-End Specialization in Coursera.
 
 1. Make the NavBar adapt to mobile view
 2. Improve Footer
-3. Add Mock Menu
-4. Add Mock Order Online
-5. Add Mock Login
 
 ## Deployment
 
