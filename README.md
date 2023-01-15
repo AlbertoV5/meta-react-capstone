@@ -1,11 +1,16 @@
 # Capstone React Project
 
-Meta Front-End Specialization in Coursera.
+**Meta Front-End Specialization in Coursera.**
+
+This Web App aims to solve Little Lemon's Table Booking problem by providing an interactive Form that allows the user to enter data for making a table reservation.
+
+Use the Nav Bar to go to the Booking route and enter mock data for making a reservation. Have fun!
 
 ## TO-DO:
 
-1. Make the NavBar adapt to mobile view
-2. Improve Footer
+1. Add more tests for navigation
+2. Improve design and fonts
+3. Add temporary Login form
 
 ## Deployment
 
