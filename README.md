@@ -19,3 +19,9 @@ npm run deploy
 ```
 
 Deployed to GitHub pages: https://github.com/gitname/react-gh-pages
+
+Remember to add basename to BrowserRouter for React Router.
+
+```js
+<BrowserRouter basename={"meta-react-capstone"}>
+```
