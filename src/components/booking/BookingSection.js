@@ -42,8 +42,8 @@ const BookingSection = () => {
                     py={"4"}
                     justify={"center"}
                 >
-                    <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
-                    <Heading textAlign={"left"} size="md">Chicago</Heading>
+                    <Heading textAlign={"left"} size="2xl">Book a Table</Heading>
+                    {/* <Heading textAlign={"left"} size="md">Little Lemon</Heading> */}
                     <Text fontSize={"lg"} py={"0.5em"}>Find a table for any ocassion.</Text>
                     <Progress value={formProgress} colorScheme={"purple"} size="sm"/>
                     <Tabs

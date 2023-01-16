@@ -10,7 +10,7 @@ Use the Nav Bar to go to the Booking route and enter mock data for making a rese
 
 1. Add more tests for navigation
 2. Improve design and fonts
-3. Add temporary Login form
+3. Add a temporary Login form
 
 ## Deployment
 
@@ -20,7 +20,7 @@ Deployment: https://albertov5.github.io/meta-react-capstone
 npm run deploy
 ```
 
-Deployed to GitHub pages tutorial: https://github.com/gitname/react-gh-pages
+Deploy to GitHub pages tutorial: https://github.com/gitname/react-gh-pages
 
 Remember to add "basename" to BrowserRouter for React Router.
 
