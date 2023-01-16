@@ -7,7 +7,7 @@ const CardTestimonial = ({heading, name, text, image}) => {
     <Card
         backgroundColor={"Background"} 
         width={{
-            base:"45%",
+            base:"42%",
             md:"13em"
         }}
         p={"2"}

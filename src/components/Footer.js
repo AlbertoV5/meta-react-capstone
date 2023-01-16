@@ -22,16 +22,16 @@ const Footer = () => {
       >
          <Image
             width={{
-               base:"40%",
+               base:"35%",
                md:"20%"
             }}
-            height={"200px"}
+            height={"180px"}
             src={"https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=2000"}
             // src="https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"
          ></Image>
          <Spacer></Spacer>
          <Box width={{
-            base:"40%",
+            base:"35%",
             md:"20%"
          }}>
             <VStack align={"left"}>
@@ -46,7 +46,7 @@ const Footer = () => {
          </Box>
          <Spacer></Spacer>
          <Box width={{
-            base:"40%",
+            base:"35%",
             md:"20%"
          }}>
             <VStack align={"left"}>
@@ -58,7 +58,7 @@ const Footer = () => {
          </Box>
          <Spacer></Spacer>
          <Box width={{
-            base:"40%",
+            base:"35%",
             md:"20%"
          }}>
             <VStack align={"left"}>

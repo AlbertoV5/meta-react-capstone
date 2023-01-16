@@ -18,7 +18,7 @@ const About = () => {
                 md:"40%"
             }}
             py={"10"}
-            paddingBottom={"20"}
+            paddingBottom={{base:"10", md:"20"}}
         >
             <Heading textAlign={"left"} size="2xl">Little Lemon</Heading>
             <Heading textAlign={"left"} size="md" as="h4">Chicago</Heading>
@@ -33,7 +33,7 @@ const About = () => {
         <HStack
             width={{
                 base:"100%",
-                md:"45%"
+                md:"42%"
             }}
             p={"4"}
         >
@@ -50,6 +50,7 @@ const About = () => {
                 src={"https://www.kyleecooks.com/wp-content/uploads/2019/03/Mini-Lemon-Meringue-Pies-28.jpg"}
             ></Image>
         </HStack>
+        <Spacer></Spacer>
     </SectionBase>
     )
 }

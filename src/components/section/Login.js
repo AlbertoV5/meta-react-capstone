@@ -28,6 +28,9 @@ const Login = () => {
             >
                 <Card variant={"outline"}>
                     <CardHeader width={"100%"} align={"center"}>
+                        <Text fontSize={"sm"} color={"gray"} py={"2"}>
+                            Login is not currently available (no functionality)
+                        </Text>
                         <Heading>User Login</Heading>
                         <Text paddingTop={"0.5em"}>Little Lemon</Text>
                     </CardHeader>
