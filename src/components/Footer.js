@@ -1,5 +1,6 @@
 import SectionBase from "./section/SectionBase";
 import {Link} from "react-router-dom"
+import { HashLink } from "react-router-hash-link";
 import { VStack, Image, Spacer, Box, Text, Heading, Wrap } from "@chakra-ui/react";
 
 
@@ -36,8 +37,8 @@ const Footer = () => {
          }}>
             <VStack align={"left"}>
                <Heading size="sm">Navigation</Heading>
-               <Link to="/#hero-section">Home</Link>
-               <Link to="/#about-section">About</Link>
+               <HashLink to="/#hero-section">Home</HashLink>
+               <HashLink to="/#about-section">About</HashLink>
                <Link to="/booking">Booking</Link>
                <Link to="/menu">Menu</Link>
                {/* <Link to="/order-online">Order Online</Link> */}
