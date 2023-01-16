@@ -20,6 +20,7 @@ const CardTestimonial = ({heading, name, text, image}) => {
                     <Image 
                         src={image}
                         width={"50%"}
+                        alt={"Image of Happy Customer"}
                     ></Image>
                     <Heading size="sm">{name}</Heading>
                 </HStack>

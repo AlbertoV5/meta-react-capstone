@@ -41,7 +41,7 @@ const Hero = () => {
         >
             <Image
                 src="https://www.agardenforthehouse.com/wp-content/uploads/2022/11/lemon-pudding-cakes4-LR-1-of-1.jpg"
-                alt="picture of dessert"
+                alt="Picture of Dessert"
             >
             </Image>
         </HStack>

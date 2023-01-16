@@ -1,23 +1,40 @@
-import { HStack, Image, Button, Spacer, Flex, VStack } from "@chakra-ui/react";
-import { HashLink } from 'react-router-hash-link';
+import { HStack, Image, Button, Spacer, Flex, VStack, ButtonGroup } from "@chakra-ui/react";
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 
 import Logo from "./Logo"
+
+const NavButton = ({to, id, children}) => {
+    return (
+        <NavHashLink 
+            to={to} 
+            id={id}
+            // activeClassName="selected"
+            // activeStyle={{ color: 'red' }}
+        >
+            {({ isActive }) => (
+                <Button
+                    variant={"ghost"} 
+                    colorScheme={isActive?'purple':'black'}
+                >{children}</Button>
+            )}
+        </NavHashLink>
+    )
+}
+
 
 const LinksLeft = () => {
     return (
         <>
         <Logo></Logo>
-        <HashLink to="/#hero-section" id="nav-home">
-            <Button variant={"ghost"}>Home</Button>
-        </HashLink>
-        <HashLink to="/#about-section">
-            <Button variant={"ghost"}>
-                About
-            </Button>
-        </HashLink>
-        <HashLink to="/menu#top" id="nav-menu">
-            <Button variant={"ghost"}>Menu</Button>
-        </HashLink>
+        <NavButton to="/#hero-section" id="nav-home">
+            Home
+        </NavButton>
+        <NavHashLink to={"/#about-section"} id={"nav-about"}>
+            <Button variant={"ghost"}>About</Button>
+        </NavHashLink>
+        <NavButton to="/menu#top" id="nav-menu">
+            Menu
+        </NavButton>
         </>
     )
 }
@@ -25,12 +42,12 @@ const LinksLeft = () => {
 const LinksRight = () => {
     return (
         <>
-        <HashLink to="/booking#top" id="nav-booking">
-            <Button variant={"ghost"}>Booking</Button>
-        </HashLink>
-        <HashLink to="/login#top" id="nav-login">
-            <Button variant={"ghost"}>Login</Button>
-        </HashLink>
+        <NavButton to="/booking#top" id="nav-booking">
+            Booking
+        </NavButton>
+        <NavButton to="/login#top" id="nav-login">
+            Login
+        </NavButton>
         </>
     )
 }

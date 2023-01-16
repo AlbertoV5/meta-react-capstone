@@ -17,6 +17,7 @@ const CardSpecial = ({image, header, price, body, footer}) => {
         src={image}
         borderRadius={"8"}
         borderBottomRadius={"0"}
+        alt={"Image of Delicious Food"}
       ></Image>
       <CardBody>
         <HStack paddingBottom={"1em"}>
