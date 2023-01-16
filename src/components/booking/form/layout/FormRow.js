@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HStack, Wrap } from '@chakra-ui/react'
+import { Wrap } from '@chakra-ui/react'
 
 const FormRow = ({width, children}) => {
   return (

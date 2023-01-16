@@ -23,7 +23,7 @@ const ConfirmForm = () => {
             localStorage.setItem("booking", JSON.stringify(booking)) // store in browser
             navigate("/confirmed-booking") // route
         }
-    }, [submitted])
+    }, [submitted, booking, navigate])
     
     const tableHeaders = ["Date", "Time", "Guests", "Ocassion"]
     const customerHeaders = ["First Name", "Last Name", "Cellphone", "Email"]

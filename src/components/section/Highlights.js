@@ -1,6 +1,6 @@
 import CardSpecial from "../cards/CardSpecial";
 
-import { HStack, VStack, Heading, Text, Button, Wrap } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Button, Wrap } from "@chakra-ui/react";
 
 import SectionBase from "./SectionBase"
 import { Link } from "react-router-dom";

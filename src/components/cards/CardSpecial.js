@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Image, Heading, Text, HStack, Spacer } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter, Image, Heading, Text, HStack, Spacer } from '@chakra-ui/react'
 
 const CardSpecial = ({image, header, price, body, footer}) => {
   return (

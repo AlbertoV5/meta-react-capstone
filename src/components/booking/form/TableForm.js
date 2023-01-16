@@ -52,7 +52,6 @@ const TableForm = ({handleTabChange, onSubmit}) => {
                         callback={(e) => dispatch({date: e.target.value})}
                     />
                     <Spacer></Spacer>
-                    {/* <FieldInput type={"time"} name={"time"} label={"Time"}/> */}
                     <FieldSelect name={"time"} label={"Time"} placeholder={"Select"}>
                         {state.avail.map((time) => (
                             <option id={`time-${time.replace(":","")}`} key={time} value={time}>{time}</option>

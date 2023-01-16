@@ -6,18 +6,17 @@ This Web App aims to solve Little Lemon's Table Booking problem by providing an 
 
 Use the Nav Bar to go to the Booking route and enter mock data for making a reservation. Have fun!
 
-Note: Login and Order-online are not functional as they are out of scope for this project.
+Note: Login and Order-online are not functional as they are out of the scope of this project.
 
 ## Deployment
 
-Deployment: https://albertov5.github.io/meta-react-capstone
+Deployed App: https://albertov5.github.io/meta-react-capstone
+
+Deploy to GitHub pages tutorial: https://github.com/gitname/react-gh-pages
 
 ```shell
 npm run deploy
 ```
-
-Deploy to GitHub pages tutorial: https://github.com/gitname/react-gh-pages
-
 Remember to add "basename" to BrowserRouter for React Router.
 
 ```js

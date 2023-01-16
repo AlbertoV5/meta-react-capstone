@@ -1,14 +1,11 @@
 import {
-    FormControl,
     FormLabel,
     FormErrorMessage,
-    FormHelperText,
     NumberInput,
     NumberInputField,
     NumberDecrementStepper,
     NumberIncrementStepper,
     NumberInputStepper,
-    Input,
 } from '@chakra-ui/react'
 
 import React from 'react'

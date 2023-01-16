@@ -1,6 +1,6 @@
-import { Heading, Text, Image, Button, HStack, VStack, 
-    Spacer, Card, CardHeader, CardBody, CardFooter,
-    FormControl, FormLabel, Input, FormHelperText, Divider
+import { Heading, Text, Button, HStack, VStack, 
+    Spacer, Card, CardHeader, CardBody, Divider,
+    FormControl, FormLabel, Input, FormHelperText, 
 } from "@chakra-ui/react";
 import SectionBase from "./SectionBase"
 

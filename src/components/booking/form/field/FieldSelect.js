@@ -1,7 +1,6 @@
 import {
     FormLabel,
     FormErrorMessage,
-    FormHelperText,
     Select,
 } from '@chakra-ui/react'
 

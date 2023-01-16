@@ -3,9 +3,9 @@ import * as Yup from 'yup';
 
 export const BookingContext = createContext({})
 
-// Date logic for default value
-let current = new Date();
-export const date = `${current.getFullYear()}-${`${current.getMonth()+1}`.padStart(2, '0')}-${current.getDate()+1}`;
+// // Date logic for default value (deprecated)
+// let current = new Date();
+// export const date = `${current.getFullYear()}-${`${current.getMonth()+1}`.padStart(2, '0')}-${current.getDate()+1}`;
 
 export const bookingDefault = {
     stage: {
@@ -35,7 +35,7 @@ export const schema = {
     table: Yup.object().shape({
         date: Yup.date().required("Required"),
         time: Yup.string().required("Required"),
-        guests: Yup.number().min(1, "Minimum 1").max(12, "Minimum 2").required("Required"),
+        guests: Yup.number().min(1, "Minimum 1").max(12, "Maximum 12").required("Required"),
         ocassion: Yup.string().required("Required"),
     }),
     customer: Yup.object().shape({
@@ -49,8 +49,7 @@ export const schema = {
     })
 };
 
-export const completeSchema = Yup.object().shape(schema);
-
+// export const completeSchema = Yup.object().shape(schema);
 
 export const BookingProvider = ({children}) => {
     const [booking, setBooking] = useState(bookingDefault);

@@ -1,5 +1,5 @@
-import { HStack, Image, Button, Spacer, Flex, VStack, ButtonGroup } from "@chakra-ui/react";
-import { HashLink, NavHashLink } from 'react-router-hash-link';
+import { HStack, Button, Spacer, Flex, VStack } from "@chakra-ui/react";
+import { NavHashLink } from 'react-router-hash-link';
 
 import Logo from "./Logo"
 

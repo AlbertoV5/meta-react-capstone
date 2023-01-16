@@ -1,7 +1,7 @@
 import SectionBase from "./SectionBase"
 import CardTestimonial from "../cards/CardTestimonial";
 
-import { Heading, HStack, VStack, Wrap, Spacer } from "@chakra-ui/react";
+import { Heading, VStack, Wrap, Spacer } from "@chakra-ui/react";
 
 
 const Testimonials = () => {

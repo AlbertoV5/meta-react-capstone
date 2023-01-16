@@ -1,6 +1,6 @@
 import { 
-    Heading, HStack, Text, VStack, Image, Spacer,
-    Tabs, TabList, TabPanels, Tab, TabPanel, Select,
+    Heading, HStack, Text, VStack, Spacer,
+    Tabs, TabList, TabPanels, Tab, TabPanel,
     Progress
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
@@ -20,8 +20,8 @@ const BookingSection = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     const handleTabChange = (i) => {
-        setFormProgress((p) => (i)*34)
-        setTabIndex(i)
+        setFormProgress(() => (i)*34);
+        setTabIndex(i);
     }
     
     return (
