@@ -6,13 +6,7 @@ This Web App aims to solve Little Lemon's Table Booking problem by providing an 
 
 Use the Nav Bar to go to the Booking route and enter mock data for making a reservation. Have fun!
 
-Book a Table: http://albertov5.github.io/meta-react-capstone/booking
-
-## TO-DO:
-
-1. Add more tests for navigation
-2. Improve design and fonts
-3. Revisit accessibility
+Note: Login and Order-online are not functional as they are out of scope for this project.
 
 ## Deployment
 
@@ -29,6 +23,11 @@ Remember to add "basename" to BrowserRouter for React Router.
 ```js
 <BrowserRouter basename={"meta-react-capstone"}>
 ```
+## To-Do:
+
+1. Add more tests.
+2. Improve design consistency.
+3. Improve accessibility and UX.
 
 ## Development:
 
