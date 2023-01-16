@@ -1,13 +1,17 @@
 import React, { useEffect, useReducer } from 'react'
 import SectionBase from '../section/SectionBase';
 
-import { VStack, Spacer, HStack, Text, Heading, Button } from '@chakra-ui/react';
+import { VStack, HStack, Text, Heading, Button } from '@chakra-ui/react';
 import { bookingDefault } from './BookingContext';
 
-import SubmitButtom from './form/SubmitButtom';
 import { useNavigate } from 'react-router-dom';
 
 const ConfirmedBookingSection = () => {
+    // This section is only made to show the user the reservation data
+    // after submitting the form. So we employ useReducer to load an object
+    // from local storage and set the state with it instead of useEffect.
+    // However, we take advantage of useEffect to clear local storage whenever 
+    // this component unmounts. 
     const [booking, dispatch] = useReducer(() => {}, {}, () => {
       let localBooking = localStorage.getItem("booking");
       return localBooking?JSON.parse(localBooking):bookingDefault

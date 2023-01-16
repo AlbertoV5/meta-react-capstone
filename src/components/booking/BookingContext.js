@@ -3,10 +3,7 @@ import * as Yup from 'yup';
 
 export const BookingContext = createContext({})
 
-// // Date logic for default value (deprecated)
-// let current = new Date();
-// export const date = `${current.getFullYear()}-${`${current.getMonth()+1}`.padStart(2, '0')}-${current.getDate()+1}`;
-
+// Default values
 export const bookingDefault = {
     stage: {
         table: true,
@@ -31,6 +28,7 @@ export const bookingDefault = {
     }
 }
 
+// Different schemas per form section
 export const schema = {
     table: Yup.object().shape({
         date: Yup.date().required("Required"),
@@ -49,8 +47,7 @@ export const schema = {
     })
 };
 
-// export const completeSchema = Yup.object().shape(schema);
-
+// Provider uses booking object
 export const BookingProvider = ({children}) => {
     const [booking, setBooking] = useState(bookingDefault);
     return (

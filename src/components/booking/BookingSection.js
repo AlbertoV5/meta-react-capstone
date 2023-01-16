@@ -15,11 +15,19 @@ import { useBookingContext } from './BookingContext'
 
 
 const BookingSection = () => {
-    const [formProgress, setFormProgress] = useState(0);
+    // Use context instead of props for state management
+    // Use local state for keeping track of all form validations
+    // TODO: there is a bug where if a form is validated once,
+    // and the user goes back one tab and changes to an invalid value,
+    // the form won't validate when going forward by clicking the next tab.
+    // Possible fix can be to lock following tabs based on current tabs,
+    // which involves modifying the booking object on tab change.
     const [booking, setBooking] = useBookingContext();
+    const [formProgress, setFormProgress] = useState(0);
     const [tabIndex, setTabIndex] = useState(0);
 
     const handleTabChange = (i) => {
+        // move onto next tab on form submit
         setFormProgress(() => (i)*34);
         setTabIndex(i);
     }
